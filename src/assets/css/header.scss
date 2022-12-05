@@ -1,0 +1,231 @@
+.header__active {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(17.5px);
+}
+.header {
+  height: 106px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  right: 0;
+  z-index: 10;
+  transition: 100ms linear;
+  &:hover {
+    background: rgba(17, 17, 17, 0.7);
+    backdrop-filter: blur(17.5px);
+  }
+
+  @media (max-width: 576px) {
+    height: 62px;
+  }
+
+  &__container {
+    height: 100%;
+
+    &__row {
+      height: 100%;
+      align-items: center;
+      &__logo {
+        padding: 0;
+        @media (max-width: 576px) {
+          display: flex;
+          justify-content: center;
+        }
+      }
+      &__navs {
+        display: flex;
+        justify-content: end;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        &__ul {
+          height: 100%;
+          display: flex;
+          align-items: center;
+
+          padding: 0;
+          margin: 0;
+          #products:hover {
+            .products__hover {
+              height: 106px;
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          li {
+            height: 100%;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin-right: 38px;
+            &:hover {
+              .about__hover {
+                height: 170px;
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+            .about__hover {
+              position: absolute;
+              top: 106px;
+              background: rgba(17, 17, 17, 0.7);
+              backdrop-filter: blur(17.5px);
+              transition: 200ms ease-in;
+              height: 0;
+              opacity: 0;
+              visibility: hidden;
+              &__ul {
+                padding: 0;
+                padding: 36px;
+
+                &__li {
+                  list-style: none;
+                  font-family: "Inter";
+                  font-style: normal;
+                  font-weight: 300;
+                  font-size: 16px;
+                  line-height: 29px;
+                  display: flex;
+                  align-items: center;
+                  text-transform: uppercase;
+                  color: #ffffff;
+                  transition: 200ms ease-in;
+                }
+              }
+            }
+            .products__hover {
+              position: absolute;
+              top: 106px;
+              left: 0;
+              background: rgba(17, 17, 17, 0.7);
+              backdrop-filter: blur(17.5px);
+              width: 100%;
+              height: 106px;
+              transition: 200ms ease-in;
+              height: 0;
+              opacity: 0;
+              visibility: hidden;
+              &__ul {
+                display: flex;
+                height: 100%;
+                padding: 0;
+                justify-content: center;
+                gap: 20px;
+                padding-left: 440px;
+
+                li {
+                  list-style: none;
+                  margin: 0;
+                  font-family: "Inter";
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 16px;
+                  text-transform: uppercase;
+                  cursor: pointer;
+                  position: relative;
+                  color: #ffffff;
+                }
+                #men:hover + .men__hover {
+                  display: flex;
+                }
+
+                .men__hover {
+                  position: absolute;
+                  top: 106px;
+                  right: 0;
+                  width: 50%;
+                  background: rgba(17, 17, 17, 0.7);
+                  backdrop-filter: blur(17.5px);
+                  padding: 31px 62px 42px;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  display: none;
+                  @media (max-width:951px) {
+                  width: 100%;
+
+                  }
+                  &:hover {
+                    display: flex;
+                  }
+                  &__ul {
+                    &__li {
+                      font-family: "Inter";
+                      font-style: normal;
+                      font-weight: 300;
+                      line-height: 36px;
+                      height: max-content;
+                      font-size: 16px;
+                      text-transform: uppercase;
+
+                      color: #ffffff;
+                    }
+                  }
+                }
+              }
+            }
+            @media (min-width: 992px) {
+              margin-top: 4px;
+            }
+            @media (max-width: 992px) {
+              margin-right: 18px;
+              &:last-child {
+                margin: 0;
+              }
+            }
+            @media (max-width: 768px) {
+              margin-right: 8px;
+            }
+            .nav__links {
+              text-decoration: none;
+              font-weight: 700;
+              font-size: 16px;
+              text-transform: uppercase;
+              color: #ffffff;
+
+              @media (max-width: 576px) {
+                display: none;
+              }
+            }
+          }
+        }
+        &__icons {
+          display: flex;
+          padding: 0;
+          margin: 0 0 0 23px;
+          color: #ffffff;
+          height: 24px;
+
+          li {
+            list-style: none;
+            margin-right: 25px;
+            color: #ffffff;
+            @media (max-width: 992px) {
+              height: 15px;
+              margin-right: 16px;
+            }
+            @media (max-width: 768px) {
+              margin-right: 8px;
+            }
+            @media (max-width: 576px) {
+              margin-right: 24px;
+            }
+            cursor: pointer;
+            .nav__icons__link {
+              font-weight: 700;
+              font-size: 20px;
+              height: 100%;
+              color: #ffffff;
+
+              @media (max-width: 992px) {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

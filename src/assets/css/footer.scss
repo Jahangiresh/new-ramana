@@ -1,0 +1,129 @@
+.footer {
+  background: black;
+  color: white;
+  padding-top: 41px;
+  &__container {
+    &__upper {
+      border-bottom: 2px solid #5f5f5f;
+      margin-bottom: 45px;
+      &__logo {
+        color: white;
+        padding: 0;
+        img {
+          width: 100%;
+        }
+        @media (max-width: 768px) {
+          margin-bottom: 42px;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+      }
+      &__social {
+        padding: 0;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+        ul {
+          display: flex;
+          gap: 19px;
+          padding: 0;
+          justify-content: end;
+          @media (max-width: 768px) {
+            display: flex;
+            justify-content: center;
+            margin-top: 42px;
+          }
+          li {
+            list-style: none;
+          }
+        }
+      }
+    }
+    &__lower {
+      padding-bottom: 41px;
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__copywrite {
+        font-weight: 400;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #5f5f5f;
+        display: flex;
+        align-items: center;
+        @media (max-width: 768px) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        }
+      }
+      &__subscribe {
+        display: flex;
+        justify-content: center;
+        @media (max-width: 768px) {
+          display: none;
+        }
+
+        &__box {
+          height: 60px;
+          display: flex;
+          align-items: center;
+          border: 2px solid #5f5f5f;
+          width: 500px;
+          padding: 0 30px;
+          justify-content: space-between;
+          span {
+            font-weight: 400;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #dad9d6;
+          }
+          input {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            text-transform: uppercase;
+            color: #dad9d6;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer__container__upper {
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  &__navs {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    ul {
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      li {
+        list-style: none;
+        font-weight: 400;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #dad9d6;
+        @media (max-width: 768px) {
+          display: flex;
+          justify-content: center;
+        }
+      }
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+  }
+}

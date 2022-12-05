@@ -1,0 +1,134 @@
+{
+  "menproducts": [
+    {
+      "id": 1,
+      "title": "black leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "shoes"
+    },
+    {
+      "id": 2,
+      "title": "black leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "bags"
+    },
+    {
+      "id": 3,
+      "title": "black leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "example"
+    },
+    {
+      "id": 4,
+      "title": "white leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "example"
+    },
+    {
+      "id": 5,
+      "title": "white leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "example"
+    },
+    {
+      "id": 6,
+      "title": "black leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "shoes"
+    },
+    {
+      "id": 7,
+      "title": "black leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "bags"
+    },
+    {
+      "id": 8,
+      "title": "black leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "example"
+    },
+    {
+      "id": 9,
+      "title": "white leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "example"
+    },
+    {
+      "id": 10,
+      "title": "white leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "example"
+    },
+    {
+      "id": 11,
+      "title": "black leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "shoes"
+    },
+    {
+      "id": 12,
+      "title": "black leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "bags"
+    },
+    {
+      "id": 13,
+      "title": "black leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "example"
+    },
+    {
+      "id": 14,
+      "title": "white leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "example"
+    },
+    {
+      "id": 15,
+      "title": "white leather shoes",
+      "price": "120",
+      "image": "./assets/images/Men-Shoes.png",
+      "category": "example"
+    }
+  ],
+  "womenproducts": [
+    {
+      "id": 1,
+      "title": "heel shoes",
+      "price": "120",
+      "image": "Rectangle49.png",
+      "category": "shoes"
+    },
+    {
+      "id": 2,
+      "title": "heel shoes",
+      "price": "120",
+      "image": "woshoes.png",
+      "category": "shoes"
+    },
+    {
+      "id": 3,
+      "title": "heel shoes",
+      "price": "120",
+
+      "image": "woshoes.png",
+
+      "category": "shoes"
+    }
+  ]
+}
