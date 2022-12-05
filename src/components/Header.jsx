@@ -124,8 +124,13 @@ const Header = () => {
               </li>
             </ul>
             <ul className="header__container__row__navs__icons">
-              <li>
-                <Link className="nav__icons__link">
+              <li
+                // style={{
+                //   display:
+                //     window.location.pathname === "/search" ? "none" : "block",
+                // }}
+              >
+                <Link to="/search" className="nav__icons__link">
                   <BsSearch />
                 </Link>
               </li>

@@ -130,5 +130,15 @@
 
       "category": "shoes"
     }
+  ],
+  "categories": [
+    "shoes",
+    "accessories",
+    "hair gel",
+    "leather",
+    "sunglasses",
+    "rave glasses",
+    "heel shoes",
+    "sneakers"
   ]
 }

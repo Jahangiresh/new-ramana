@@ -10,6 +10,7 @@ import Location from "./pages/Location";
 import Contact from "./pages/Contact";
 import Checkout from "./pages/Checkout";
 import CookieModal from "./components/CookieModal";
+import Search from "./pages/Search";
 function App() {
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/location" element={<Location />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
         <Footer />
       </Router>
