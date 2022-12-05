@@ -99,6 +99,7 @@
               position: absolute;
               top: 106px;
               left: 0;
+              background: transparent;
               background: rgba(17, 17, 17, 0.7);
               backdrop-filter: blur(17.5px);
               width: 100%;
@@ -143,9 +144,8 @@
                   flex-direction: row;
                   justify-content: space-between;
                   display: none;
-                  @media (max-width:951px) {
-                  width: 100%;
-
+                  @media (max-width: 951px) {
+                    width: 100%;
                   }
                   &:hover {
                     display: flex;

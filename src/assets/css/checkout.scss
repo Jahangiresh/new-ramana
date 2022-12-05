@@ -1,0 +1,261 @@
+.main {
+  margin: 120px 0 100px 0;
+}
+.main__container__checkout {
+  border-bottom: 2px solid #363636;
+  padding-bottom: 10px;
+  margin-bottom: 51px;
+}
+.main__container__checkout__span {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+.main__container__info {
+  background: #dad9d6;
+  height: 111px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  margin-bottom: 51px;
+  @media (max-width: 768px) {
+    padding: 0;
+
+    height: auto;
+  }
+  &__box {
+    @media (max-width: 768px) {
+      padding: 30px;
+    }
+    @media (max-width: 576px) {
+        width: 100%;
+        text-align: center;
+    }
+  }
+}
+.main__container__info__box p {
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.main__container__info__box span {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.main__container__orders__row {
+  border-bottom: 2px solid #363636;
+  padding-bottom: 14px;
+  margin-bottom: 47px;
+}
+.main__container__orders__row__title {
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 16px;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+}
+.main__container__orders__row__title p {
+  font-weight: 700;
+  margin: 0;
+}
+.main__container__orders__row__product {
+  padding: 0;
+}
+.main__container__orders__row__product__image {
+  float: right;
+  width: 111px;
+  height: 69px;
+  padding: 10px;
+}
+.main__container__orders__row__product img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.main__container__orders__row .x {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-weight: 100;
+  float: right;
+}
+.main__container__inputs {
+  justify-content: space-between;
+  margin-bottom: 51px;
+}
+.main__container__inputs__name {
+  border-bottom: 2px solid #363636;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 48%;
+  margin-bottom: 51px;
+}
+.main__container__inputs__name__box {
+  margin-bottom: 14px;
+}
+.main__container__inputs__name__box .input__data {
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  background: transparent;
+}
+.main__container__inputs__name__box .input__data::-webkit-outer-spin-button,
+.main__container__inputs__name__box .input__data::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main__container__inputs__name__box #emailaddress {
+  text-transform: lowercase;
+}
+.main__container__inputs__name__box #address {
+  text-transform: lowercase;
+  width: 79%;
+}
+.main__container__inputs__name__box span {
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+.main__container__inputs__name .addressss {
+  position: relative;
+  width: 60px;
+  float: right;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.main__container__inputs__name .addressss:hover .hover__address {
+  display: flex !important;
+}
+.main__container__inputs__name .addressss .hover__address {
+  display: none !important;
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(17px) saturate(100%);
+
+  background-color: rgba(17, 25, 40, 0.55);
+
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 210px;
+  font-size: 13px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  list-style: none;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.main__container__inputs__name .addressss .hover__address label {
+  margin: 10px;
+}
+.main__container__inputs__name .addressss .hover__address__row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.main__container__orderinfo {
+  display: flex;
+  justify-content: space-between;
+}
+.payment__box {
+  display: flex;
+  position: relative;
+  &:hover {
+    .payment__hover {
+      height: 120px;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .svg__chevron {
+    float: right;
+    width: max-content !important;
+    display: flex;
+    justify-self: end;
+  }
+  .payment__hover {
+    position: absolute;
+    top: 53px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(17px) saturate(100%);
+    background-color: rgba(17, 25, 40, 0.55);
+    padding: 39px 0;
+    transition: 200ms ease-in;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    &__ul {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      &__li {
+        list-style: none;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 300;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin-bottom: 10px;
+        .payment__radio {
+          margin-left: 10px;
+        }
+        @media (max-width: 992px) {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+.main__container__orderinfo__box {
+  border: 2px solid #363636;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 23%;
+}
+.main__container__button {
+  width: 100%;
+  margin: 51px 0;
+  display: flex;
+  justify-content: center;
+}
+.main__container__button button {
+  padding: 16px 22px;
+  background: #111111;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  transition: 0.3s linear;
+}
+
+.main__container__button button:hover {
+  color: #111111;
+  background: #fff;
+}

@@ -4,8 +4,10 @@ import logo from "../assets/images/logo.png";
 import instagram from "../assets/images/instagram.png";
 import facebook from "../assets/images/facebook.png";
 import linkedin from "../assets/images/in.png";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <div className="footer">
       <div className="footer__container container">
@@ -17,8 +19,8 @@ const Footer = () => {
             <ul>
               <li>products</li>
               <li>about</li>
-              <li>contact</li>
-              <li>branches</li>
+              <li onClick={() => navigate("/contact")}>contact</li>
+              <li onClick={() => navigate("/branches")}>branches</li>
               <li>faq</li>
             </ul>
           </div>

@@ -1,14 +1,22 @@
 import React from "react";
 import "../assets/css/header.scss";
 import { FiGlobe } from "react-icons/fi";
-import { BsBag, BsHeart, BsSearch, BsGlobe } from "react-icons/bs";
+import {
+  BsBag,
+  BsHeart,
+  BsHeartFill,
+  BsSearch,
+  BsBagFill,
+} from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Ramanalogo from "./Ramanalogo";
 import Menuslider from "./Menuslider";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 const Header = () => {
-  const navigate = useNavigate();
+  const [bagActive, setBagActive] = useState(false);
+  const [heartActive, setHeartActive] = useState(false);
+
   document.addEventListener("scroll", () => {
     const header = document.querySelector(".header");
     window.pageYOffset > 10
@@ -16,7 +24,12 @@ const Header = () => {
       : header.classList.remove("header__active");
   });
   return (
-    <div className="header ">
+    <div
+      style={{
+        background: window.location.pathname === "/checkout" ? "black" : "",
+      }}
+      className="header "
+    >
       <div className="header__container container">
         <div className="header__container__row row">
           <div className="header__container__row__logo col-3 d-block d-sm-none">
@@ -105,7 +118,9 @@ const Header = () => {
                 </div>
               </li>
               <li>
-                <Link className="nav__links">contact</Link>
+                <Link to="/contact" className="nav__links">
+                  contact
+                </Link>
               </li>
             </ul>
             <ul className="header__container__row__navs__icons">
@@ -114,14 +129,20 @@ const Header = () => {
                   <BsSearch />
                 </Link>
               </li>
-              <li className="d-none d-md-block">
+              <li
+                onClick={() => setHeartActive((value) => !value)}
+                className="d-none d-md-block"
+              >
                 <Link className="nav__icons__link">
-                  <BsHeart />
+                  {heartActive ? <BsHeartFill /> : <BsHeart />}
                 </Link>
               </li>
-              <li className="d-none d-md-block">
+              <li
+                onClick={() => setBagActive((value) => !value)}
+                className="d-none d-md-block"
+              >
                 <Link className="nav__icons__link">
-                  <BsBag />
+                  {bagActive ? <BsBagFill /> : <BsBag />}
                 </Link>
               </li>
               <li className="d-none d-md-block">
