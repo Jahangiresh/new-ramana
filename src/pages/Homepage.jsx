@@ -9,8 +9,10 @@ import { TfiEmail } from "react-icons/tfi";
 import "../assets/css/homepage.scss";
 import HomepageButton from "../components/HomepageButton";
 const Homepage = () => {
+  
   return (
     <>
+    
       <div className="homepage">
         <div className="homepage__cover">
           <img src={cover1} alt="" />

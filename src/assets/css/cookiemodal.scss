@@ -1,0 +1,41 @@
+.css-17pdlxs {
+  border: none !important;
+  &:focus {
+    outline: none !important;
+  }
+}
+.modal__h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700 !important;
+  font-size: 32px !important;
+  line-height: 26px !important;
+
+  text-transform: uppercase;
+
+  color: #363636;
+}
+.button__close {
+  button {
+    padding: 0 20px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #fff;
+
+    color: #363636;
+  }
+}
+.under__text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+
+  text-transform: uppercase;
+
+  color: #363636;
+}

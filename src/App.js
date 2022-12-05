@@ -9,11 +9,17 @@ import Branches from "./pages/Branches";
 import Location from "./pages/Location";
 import Contact from "./pages/Contact";
 import Checkout from "./pages/Checkout";
+import CookieModal from "./components/CookieModal";
 function App() {
+
+
+  
   return (
     <div className="App">
       <Router>
         <Header />
+        <CookieModal />
+
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/shop" element={<Shop />} />
