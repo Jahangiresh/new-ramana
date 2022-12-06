@@ -6,6 +6,7 @@ import axios from "axios";
 import LoadingBox from "./LoadingBox";
 import ReactPaginate from "react-paginate";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -21,6 +22,7 @@ const reducer = (state, action) => {
 };
 
 const MenProduct = () => {
+  const navigate = useNavigate();
   const [{ products, error, loading }, dispatch] = useReducer(reducer, {
     products: [],
     loading: true,
@@ -67,7 +69,11 @@ const MenProduct = () => {
       {products &&
         products.map((product) => {
           return (
-            <div key={product.id} className="product__box col-6">
+            <div
+              onClick={() => navigate(`/singleproduct/${product.id}`)}
+              key={product.id}
+              className="product__box col-6"
+            >
               <div className="product__box__image">
                 <img src={shoesImg} alt="" />
               </div>

@@ -9,11 +9,12 @@ import {
   BsBagFill,
 } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Ramanalogo from "./Ramanalogo";
 import Menuslider from "./Menuslider";
 import { useState } from "react";
 const Header = () => {
+  const navigate = useNavigate();
   const [bagActive, setBagActive] = useState(false);
   const [heartActive, setHeartActive] = useState(false);
 
@@ -43,7 +44,9 @@ const Header = () => {
           <div className="header__container__row__navs col-3 col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
             <ul className="header__container__row__navs__ul">
               <li id="products">
-                <Link className="nav__links">products</Link>
+                <Link to="/shop" className="nav__links">
+                  products
+                </Link>
                 <div className="products__hover">
                   <ul className="products__hover__ul">
                     <li id="men">
@@ -106,14 +109,29 @@ const Header = () => {
                 </div>
               </li>
               <li>
-                <Link id="about" className="nav__links">
+                <Link to="/about" id="about" className="nav__links">
                   about
                 </Link>
                 <div className="about__hover">
                   <ul className="about__hover__ul">
-                    <li className="about__hover__ul__li">about us</li>
-                    <li className="about__hover__ul__li">our branches</li>
-                    <li className="about__hover__ul__li">faq</li>
+                    <li
+                      onClick={() => navigate("/about")}
+                      className="about__hover__ul__li"
+                    >
+                      about us
+                    </li>
+                    <li
+                      onClick={() => navigate("/branches")}
+                      className="about__hover__ul__li"
+                    >
+                      our branches
+                    </li>
+                    <li
+                      onClick={() => navigate("/faq")}
+                      className="about__hover__ul__li"
+                    >
+                      faq
+                    </li>
                   </ul>
                 </div>
               </li>
@@ -125,10 +143,10 @@ const Header = () => {
             </ul>
             <ul className="header__container__row__navs__icons">
               <li
-                // style={{
-                //   display:
-                //     window.location.pathname === "/search" ? "none" : "block",
-                // }}
+              // style={{
+              //   display:
+              //     window.location.pathname === "/search" ? "none" : "block",
+              // }}
               >
                 <Link to="/search" className="nav__icons__link">
                   <BsSearch />

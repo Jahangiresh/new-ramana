@@ -1,6 +1,8 @@
 import React from "react";
 import cover1 from "../assets/images/unsplash_hCG34GSdYTA.jpg";
 import cover2 from "../assets/images/Rectangle43.png";
+import coverRotate from "../assets/images/coverrotate.png";
+
 import cover3 from "../assets/images/bag.png";
 import cover4 from "../assets/images/Rectangle57.png";
 import cover5 from "../assets/images/Rectangle49.png";
@@ -9,10 +11,11 @@ import { TfiEmail } from "react-icons/tfi";
 import "../assets/css/homepage.scss";
 import HomepageButton from "../components/HomepageButton";
 const Homepage = () => {
-  
+  const mediaMatch = window.matchMedia("(max-width: 576px)");
+
+  console.log(mediaMatch.matches);
   return (
     <>
-    
       <div className="homepage">
         <div className="homepage__cover">
           <img src={cover1} alt="" />
@@ -24,7 +27,12 @@ const Homepage = () => {
           </div>
         </div>
         <div className="homepage__footwear__cover">
-          <img src={cover2} alt="" />
+          {mediaMatch.matches ? (
+            <img src={coverRotate} alt="" />
+          ) : (
+            <img src={cover2} alt="" />
+          )}
+
           <div className="homepage__footwear__cover__title">
             <h1>footwear</h1>
             <p>made just for you</p>

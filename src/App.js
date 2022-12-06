@@ -11,10 +11,10 @@ import Contact from "./pages/Contact";
 import Checkout from "./pages/Checkout";
 import CookieModal from "./components/CookieModal";
 import Search from "./pages/Search";
+import NothingPage from "./pages/NothingPage";
+import About from "./pages/About";
+import SingleProduct from "./pages/SingleProduct";
 function App() {
-
-
-  
   return (
     <div className="App">
       <Router>
@@ -30,6 +30,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/*" element={<NothingPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/singleproduct/:id" element={<SingleProduct />} />
         </Routes>
         <Footer />
       </Router>

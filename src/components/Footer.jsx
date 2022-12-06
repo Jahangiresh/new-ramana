@@ -13,12 +13,12 @@ const Footer = () => {
       <div className="footer__container container">
         <div className="footer__container__upper row">
           <div className="footer__container__upper__logo col-3">
-            <img src={logo} alt="" />
+            <img onClick={() => navigate("/")} src={logo} alt="" />
           </div>
           <div className="footer__container__upper__navs col-7">
             <ul>
-              <li>products</li>
-              <li>about</li>
+              <li onClick={() => navigate("/shop")}>products</li>
+              <li onClick={() => navigate("/about")}>about</li>
               <li onClick={() => navigate("/contact")}>contact</li>
               <li onClick={() => navigate("/branches")}>branches</li>
               <li>faq</li>
