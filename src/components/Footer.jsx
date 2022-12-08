@@ -44,7 +44,7 @@ const Footer = () => {
             © 2022 ramana caste
           </div>
           <div className="footer__container__lower__subscribe col-8">
-            <div className="footer__container__lower__subscribe__box">
+            {/* <div className="footer__container__lower__subscribe__box">
               <span>
                 <i className="fa-regular fa-envelope"></i>
               </span>
@@ -57,7 +57,7 @@ const Footer = () => {
               <span>
                 <i className="fa-solid fa-right-long"></i>
               </span>
-            </div>
+            </div> */}
           </div>
           <div className="footer__container__lower__copywrite col-2">
             website by Dreamart

@@ -27,7 +27,11 @@ const Header = () => {
   return (
     <div
       style={{
-        background: window.location.pathname === "/checkout" ? "black" : "",
+        background:
+          window.location.pathname === "/checkout" ||
+          window.location.pathname === "/singleproduct/1"
+            ? "black"
+            : "",
       }}
       className="header "
     >
@@ -50,7 +54,7 @@ const Header = () => {
                 <div className="products__hover">
                   <ul className="products__hover__ul">
                     <li id="men">
-                      <Link to="/shop" className="nav__links">
+                      <Link to="/shop/men" className="nav__links">
                         men
                       </Link>
                     </li>

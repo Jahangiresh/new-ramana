@@ -5,7 +5,11 @@ import axios from "axios";
 import LoadingBox from "./LoadingBox";
 import ReactPaginate from "react-paginate";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
-
+import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useState } from "react";
 const reducer = (state, action) => {
   switch (action.type) {
     case "FETCH_REQUEST":
@@ -20,6 +24,20 @@ const reducer = (state, action) => {
 };
 
 const WomenProduct = () => {
+  const [isAutoplay, setIsAutoplay] = useState(false);
+  let settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplaySpeed: 300,
+    pauseOnHover: false,
+    autoplay: isAutoplay,
+  };
+  const navigate = useNavigate();
+
   const [{ womenproducts, error, loading }, dispatch] = useReducer(reducer, {
     womenproducts: [],
     loading: true,
@@ -66,9 +84,25 @@ const WomenProduct = () => {
       {womenproducts &&
         womenproducts.map((product) => {
           return (
-            <div key={product.id} className="product__box col-6">
+            <div
+              onClick={() => navigate(`/singleproduct/${product.id}`)}
+              // onMouseOver={() => setIsAutoplay(true)}
+              // onMouseOut={() => setIsAutoplay(false)}
+              key={product.id}
+              className="product__box col-6"
+            >
               <div className="product__box__image">
-                <img src={product.image} alt={product.image} />
+                <Slider {...settings}>
+                  {product.images &&
+                    product.images.map((img) => (
+                      <img
+                        className="produc__img"
+                        key={product.id}
+                        src={img}
+                        alt=""
+                      />
+                    ))}
+                </Slider>
               </div>
               <div className="product__box__content">
                 <div className="product__box__content__details col-9">

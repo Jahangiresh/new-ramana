@@ -6,11 +6,12 @@ import coverRotate from "../assets/images/coverrotate.png";
 import cover3 from "../assets/images/bag.png";
 import cover4 from "../assets/images/Rectangle57.png";
 import cover5 from "../assets/images/Rectangle49.png";
-
+import { useNavigate } from "react-router-dom";
 import { TfiEmail } from "react-icons/tfi";
 import "../assets/css/homepage.scss";
 import HomepageButton from "../components/HomepageButton";
 const Homepage = () => {
+  const navigate = useNavigate();
   const mediaMatch = window.matchMedia("(max-width: 576px)");
 
   console.log(mediaMatch.matches);
@@ -38,10 +39,16 @@ const Homepage = () => {
             <p>made just for you</p>
           </div>
           <div className="homepage__footwear__cover__footer">
-            <div className="homepage__footwear__cover__footer__left col-6">
+            <div
+              onClick={() => navigate("/shop")}
+              className="homepage__footwear__cover__footer__left col-6"
+            >
               menswear
             </div>
-            <div className="homepage__footwear__cover__footer__right col-6">
+            <div
+              onClick={() => navigate("/womenshop")}
+              className="homepage__footwear__cover__footer__right col-6"
+            >
               womenswear
             </div>
           </div>
@@ -53,10 +60,16 @@ const Homepage = () => {
             <p>made just for you</p>
           </div>
           <div className="homepage__footwear__cover__footer">
-            <div className="homepage__footwear__cover__footer__left col-6">
+            <div
+              onClick={() => navigate("/shop")}
+              className="homepage__footwear__cover__footer__left col-6"
+            >
               menswear
             </div>
-            <div className="homepage__footwear__cover__footer__right col-6">
+            <div
+              onClick={() => navigate("/womenshop")}
+              className="homepage__footwear__cover__footer__right col-6"
+            >
               womenswear
             </div>
           </div>
@@ -68,10 +81,16 @@ const Homepage = () => {
             <p>made just for you</p>
           </div>
           <div className="homepage__footwear__cover__footer">
-            <div className="homepage__footwear__cover__footer__left col-6">
+            <div
+              onClick={() => navigate("/shop")}
+              className="homepage__footwear__cover__footer__left col-6"
+            >
               menswear
             </div>
-            <div className="homepage__footwear__cover__footer__right col-6">
+            <div
+              onClick={() => navigate("/womenshop")}
+              className="homepage__footwear__cover__footer__right col-6"
+            >
               womenswear
             </div>
           </div>
@@ -83,10 +102,16 @@ const Homepage = () => {
             <p>made just for you</p>
           </div>
           <div className="homepage__footwear__cover__footer">
-            <div className="homepage__footwear__cover__footer__left col-6">
+            <div
+              onClick={() => navigate("/womenshop")}
+              className="homepage__footwear__cover__footer__left col-6"
+            >
               girls
             </div>
-            <div className="homepage__footwear__cover__footer__right col-6">
+            <div
+              onClick={() => navigate("/shop")}
+              className="homepage__footwear__cover__footer__right col-6"
+            >
               boys
             </div>
           </div>

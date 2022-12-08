@@ -1,11 +1,53 @@
-import React, { Component } from "react";
+import React, { Component, useReducer } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../assets/css/singleproduct.scss";
 import shoespng from "../assets/images/brownshoes.png";
 import { BsBag, BsHeart, BsHeartFill, BsBagFill } from "react-icons/bs";
+import { useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "FETCH_REQ":
+      return { ...state, loading: true };
+
+    case "FETCH_SUCCESS":
+      return { ...state, loading: false, product: action.payload };
+
+    case "FETCH_FAIL":
+      return { state, error: true, loading: false };
+
+    default:
+      return state;
+  }
+};
+
 const SingleProduct = () => {
+  const [{ product, loading, error }, dispatch] = useReducer(reducer, {
+    product: {},
+    loading: true,
+    error: false,
+  });
+  const params = useParams();
+  const _id = params.id;
+
+  useEffect(() => {
+    const getProduct = async () => {
+      dispatch({ type: "FETCH_REQ" });
+      try {
+        const resp = await axios.get(`http://localhost:3000/products/${_id}`);
+        dispatch({ type: "FETCH_SUCCESS", payload: resp.data });
+      } catch (error) {
+        dispatch({ type: "FETCH_FAIL" });
+        alert("error");
+      }
+    };
+    getProduct();
+  }, [_id]);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -13,6 +55,8 @@ const SingleProduct = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  console.log(product);
+
   return (
     <div className="singleproduct">
       <div className="singleproduct__cover">
@@ -26,10 +70,10 @@ const SingleProduct = () => {
               <div className="singleproduct__cover__container__row__mainproduct__header">
                 <div className="singleproduct__cover__container__row__mainproduct__header__title">
                   <h2 className="singleproduct__cover__container__row__mainproduct__header__title__h">
-                    brown leather shoes
+                    {product.title}
                   </h2>
                   <span className="singleproduct__cover__container__row__mainproduct__header__title__span">
-                    120azn
+                    {product.price} azn
                   </span>
                 </div>
                 <div className="singleproduct__cover__container__row__mainproduct__header__icons">
@@ -39,21 +83,18 @@ const SingleProduct = () => {
               </div>
               <div className="singleproduct__cover__container__row__mainproduct__image">
                 <Slider {...settings}>
-                  <img src={shoespng} alt="" />
-                  <img src={shoespng} alt="" />
-                  <img src={shoespng} alt="" />
+                  {product.images &&
+                    product.images.map((image) => <img src={image} alt="" />)}
                 </Slider>
               </div>
-              <div className="singleproduct__cover__container__row__mainproduct__footer">
-                sa
-              </div>
+              <div className="singleproduct__cover__container__row__mainproduct__footer"></div>
             </div>
             <div className="singleproduct__cover__container__row__album ">
               <div className="singleproduct__cover__container__row__album__upper">
-                <img src={shoespng} alt="" />
+                <img src={product.images && product.images[1]} alt="" />
               </div>
               <div className="singleproduct__cover__container__row__album__under">
-                <img src={shoespng} alt="" />
+                <img src={product.images && product.images[2]} alt="" />
               </div>
             </div>
           </div>
@@ -61,17 +102,22 @@ const SingleProduct = () => {
             <div className="singleproduct__cover__container__details__left col-5">
               <p className="singleproduct__cover__container__details__left__p">
                 Product category: <br />
-                Moccasins, Men’s footwear.
+                {product.category}
               </p>{" "}
               <p className="singleproduct__cover__container__details__left__p">
                 Materials:
                 <br />
-                Real calfskin leather, cotton.
+                {product.materials}
               </p>{" "}
               <p className="singleproduct__cover__container__details__left__p">
                 Avaliable sizes:
                 <br />
-                36, 37, 38, 39, 40, 41, 42
+                {product.sizes &&
+                  product.sizes.map((size) => (
+                    <span key={size} style={{ marginRight: "10px" }}>
+                      {size}
+                    </span>
+                  ))}
               </p>{" "}
               <p
                 style={{ margin: 0 }}
@@ -79,7 +125,12 @@ const SingleProduct = () => {
               >
                 Avaliable colors:
                 <br />
-                Brown, Auburn, Sage green, Grey, Midnight
+                {product.colors &&
+                  product.colors.map((c) => (
+                    <span key={c} style={{ marginRight: "10px" }}>
+                      {c}
+                    </span>
+                  ))}
               </p>
             </div>
             <div className="singleproduct__cover__container__details__right col-7">
