@@ -55,7 +55,6 @@ const SingleProduct = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  console.log(product);
 
   return (
     <div className="singleproduct">
@@ -84,7 +83,9 @@ const SingleProduct = () => {
               <div className="singleproduct__cover__container__row__mainproduct__image">
                 <Slider {...settings}>
                   {product.images &&
-                    product.images.map((image) => <img src={image} alt="" />)}
+                    product.images.map((image) => (
+                      <img key={image} src={image} alt="" />
+                    ))}
                 </Slider>
               </div>
               <div className="singleproduct__cover__container__row__mainproduct__footer"></div>

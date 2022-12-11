@@ -91,6 +91,7 @@
             position: relative;
 
             .filter__categories__hover {
+              z-index: 3;
               position: absolute;
               width: 100%;
               top: 100%;

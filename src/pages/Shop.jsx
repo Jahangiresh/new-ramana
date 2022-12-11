@@ -3,11 +3,12 @@ import shopCover from "../assets/images/unsplash_hCG34GSdYTA.png";
 import "../assets/css/shop.scss";
 import { RiArrowUpDownLine } from "react-icons/ri";
 // import { VscChevronDown } from "react-icons/vsc";
-import MenProduct from "../components/Product";
 import filterIcon from "../assets/images/filter.png";
 import Checkbox from "@mui/material/Checkbox";
+import MenProduct from "../components/MenProduct";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const Shop = () => {
+  
   return (
     <>
       <div className="shop">

@@ -54,7 +54,7 @@ const Header = () => {
                 <div className="products__hover">
                   <ul className="products__hover__ul">
                     <li id="men">
-                      <Link to="/shop/men" className="nav__links">
+                      <Link to="/shop" className="nav__links">
                         men
                       </Link>
                     </li>

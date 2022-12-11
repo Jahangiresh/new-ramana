@@ -2,6 +2,20 @@
   width: 32%;
   background: #dad9d6;
   margin-bottom: 20px;
+  position: relative;
+  .icons__div__product {
+    position: absolute;
+    top: 22px;
+    right: 31px;
+    z-index: 2;
+    display: flex;
+    gap: 20px;
+
+    svg {
+      font-size: 19px;
+      cursor: pointer;
+    }
+  }
   &:hover {
     .produc__img {
       transform: scale(1.2);

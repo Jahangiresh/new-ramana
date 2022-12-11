@@ -14,7 +14,6 @@ const Homepage = () => {
   const navigate = useNavigate();
   const mediaMatch = window.matchMedia("(max-width: 576px)");
 
-  console.log(mediaMatch.matches);
   return (
     <>
       <div className="homepage">

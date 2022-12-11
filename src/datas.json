@@ -398,7 +398,9 @@
       "sizes": [38, 39, 42, 43, 44],
       "colors": ["red", "green", "black", "brown"],
       "gender": "male"
-    },
+    }
+  ],
+  "womenproducts":[
     {
       "id": 21,
       "title": "woman leather shoes",

@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useContext, useEffect, useReducer } from "react";
 import "../assets/css/product.scss";
 import arrow from "../assets/images/Arrow.png";
 import axios from "axios";
@@ -9,6 +9,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import { BsBag, BsHeart, BsHeartFill, BsBagFill } from "react-icons/bs";
+import { ProductContext } from "../ProductContext";
 const reducer = (state, action) => {
   switch (action.type) {
     case "FETCH_REQUEST":
@@ -22,7 +25,7 @@ const reducer = (state, action) => {
   }
 };
 
-const Product = () => {
+const MenProduct = () => {
   let settings = {
     dots: false,
     arrows: false,
@@ -40,17 +43,12 @@ const Product = () => {
     loading: true,
     error: false,
   });
-
-  const params = useParams();
-  const gender = params.gender;
-  const category = params.category;
-  console.log(category, gender);
   useEffect(() => {
     const getProducts = async () => {
       dispatch({ type: "FETCH_REQUEST" });
       try {
         const resp = await axios.get(
-          `http://localhost:3000/products/?gender=${gender}`
+          "http://localhost:3000/products?_page=1&_limit=9"
         );
 
         dispatch({ type: "FETCH_SUCCESS", payload: resp.data });
@@ -61,22 +59,48 @@ const Product = () => {
     getProducts();
   }, []);
 
-  // const fetchProducts = async (currentPage) => {
-  //   try {
-  //     const res = await axios.get(
-  //       `http://localhost:3000/products?_page=${currentPage}&_limit=9`
-  //     );
-  //     return res.data;
-  //   } catch (error) {
-  //     alert("error");
-  //   }
-  // };
-  // const handlePageClick = async (data) => {
-  //   let currentPage = data.selected + 1;
-  //   const productsFormServer = await fetchProducts(currentPage);
-  //   dispatch({ type: "FETCH_SUCCESS", payload: productsFormServer });
-  // };
+  const fetchProducts = async (currentPage) => {
+    try {
+      const res = await axios.get(
+        `http://localhost:3000/products?_page=${currentPage}&_limit=9`
+      );
+      return res.data;
+    } catch (error) {
+      alert("error");
+    }
+  };
 
+  //localStorage
+  const { favorites, setFavorites } = useContext(ProductContext);
+
+  const handlePageClick = async (data) => {
+    let currentPage = data.selected + 1;
+    const menproductsFormServer = await fetchProducts(currentPage);
+    dispatch({ type: "FETCH_SUCCESS", payload: menproductsFormServer });
+  };
+
+  //localFavadd
+  const favoriteHandler = (product) => {
+    let FavoritProds = JSON.parse(localStorage.getItem("favorites"));
+    let existedProduct = FavoritProds.find((fav) => fav.id === product.id);
+
+    if (existedProduct) {
+      
+      console.log(favorites.indexOf(existedProduct));
+      favorites.splice(favorites.indexOf(existedProduct), 1);
+
+      // const updatedArray = FavoritProds.filter(
+      //   (fav) => fav.id !== existedProduct.id
+      // );
+
+      // setFavorites(updatedArray);
+    } else {
+      favorites.push(product);
+    }
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    // console.log(favorites);
+  };
   return loading ? (
     <div>
       <LoadingBox />
@@ -86,12 +110,22 @@ const Product = () => {
       {products &&
         products.map((product) => {
           return (
-            <div
-              onClick={() => navigate(`/singleproduct/${product.id}`)}
-              key={product.id}
-              className="product__box col-6"
-            >
-              <div className="product__box__image">
+            <div key={product.id} className="product__box col-6">
+              <div className="icons__div__product">
+                <span className="icons__div__product__bag">
+                  <BsBag />
+                </span>
+                <span
+                  onClick={() => favoriteHandler(product)}
+                  className="icons__div__product__heart"
+                >
+                  <BsHeart />
+                </span>
+              </div>
+              <div
+                onClick={() => navigate(`/singleproduct/${product.id}`)}
+                className="product__box__image"
+              >
                 <Slider {...settings}>
                   {product.images &&
                     product.images.map((img) => (
@@ -104,7 +138,10 @@ const Product = () => {
                     ))}
                 </Slider>
               </div>
-              <div className="product__box__content">
+              <div
+                onClick={() => navigate(`/singleproduct/${product.id}`)}
+                className="product__box__content"
+              >
                 <div className="product__box__content__details col-9">
                   <h3>{product.title}</h3>
                   <span>{product.price} AZN</span>
@@ -123,6 +160,7 @@ const Product = () => {
           nextLabel=<HiArrowRight className="page__arrow__icon" />
           pageRangeDisplayed={5}
           pageCount={products.length}
+          onPageChange={handlePageClick}
           renderOnZeroPageCount={null}
           activeClassName={"active__page"}
         />
@@ -131,4 +169,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default MenProduct;
