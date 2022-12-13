@@ -13,10 +13,11 @@ import { Link, useNavigate } from "react-router-dom";
 import Ramanalogo from "./Ramanalogo";
 import Menuslider from "./Menuslider";
 import { useState } from "react";
+import Cart from "./Cart";
+import { useContext } from "react";
+import { ProductContext } from "../ProductContext";
 const Header = () => {
   const navigate = useNavigate();
-  const [bagActive, setBagActive] = useState(false);
-  const [heartActive, setHeartActive] = useState(false);
 
   document.addEventListener("scroll", () => {
     const header = document.querySelector(".header");
@@ -157,20 +158,21 @@ const Header = () => {
                   <BsSearch />
                 </Link>
               </li>
-              <li
-                onClick={() => setHeartActive((value) => !value)}
-                className="d-none d-md-block"
-              >
-                <Link className="nav__icons__link">
-                  {heartActive ? <BsHeartFill /> : <BsHeart />}
+              <li className="d-none d-md-block">
+                <Link to="/likes" className="nav__icons__link">
+                  {window.location.pathname === "/likes" ? (
+                    <BsHeartFill />
+                  ) : (
+                    <BsHeart />
+                  )}
                 </Link>
               </li>
               <li
-                onClick={() => setBagActive((value) => !value)}
+                // onClick={() => setBagActive((value) => !value)}
                 className="d-none d-md-block"
               >
                 <Link className="nav__icons__link">
-                  {bagActive ? <BsBagFill /> : <BsBag />}
+                  <Cart />
                 </Link>
               </li>
               <li className="d-none d-md-block">

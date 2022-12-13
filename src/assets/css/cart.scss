@@ -1,0 +1,115 @@
+.offcanvas-end {
+  width: 50% !important;
+}
+.cart {
+  &__header {
+    height: 106px;
+    display: flex;
+    align-items: center;
+    &__ul {
+      margin: 0;
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+      &__li {
+        text-decoration: none;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 26px;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        color: #363636;
+      }
+    }
+    &__icons {
+      margin: 0;
+      display: flex;
+      justify-content: space-around;
+      padding: 0 40px;
+      &__li {
+        text-decoration: none;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+
+        color: #363636;
+      }
+    }
+  }
+  &__body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 80px;
+    &__h {
+      width: 100%;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 145.83%;
+      text-transform: uppercase;
+      text-align: center;
+      color: #363636;
+    }
+    &__products {
+      height: 350px;
+      overflow: auto;
+      width: 100%;
+
+      &__item {
+        width: 100%;
+        border-bottom: 1px solid #363636;
+        padding-bottom: 14px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 47px;
+        &__content {
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
+
+          &__h {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 163.52%;
+            margin: 0;
+            text-transform: uppercase;
+
+            color: #363636;
+          }
+          span {
+            color: #000000;
+            text-transform: capitalize;
+            font-weight: 300;
+            font-size: 14px;
+          }
+        }
+        &__image {
+          display: flex;
+          align-items: center;
+          padding-right: 20px;
+          &__x {
+            cursor: pointer;
+          }
+          img {
+            margin-right: 20px;
+
+            width: 80px;
+            height: 70px;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}

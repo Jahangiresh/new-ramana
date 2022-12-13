@@ -18,6 +18,8 @@ import Shop from "./pages/Shop";
 import { useState, useEffect, useMemo } from "react";
 import { ProductContext } from "./ProductContext";
 import Likes from "./pages/Likes";
+import OffCanvasExample from "./components/Cart";
+import Cart from "./components/Cart";
 
 function App() {
   const [favorites, setFavorites] = useState([]);
@@ -43,15 +45,14 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
-        <CookieModal />
-        <ScrollToTop />
         <ProductContext.Provider value={favoritesValue}>
+          <Header />
+          <CookieModal />
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/womenshop" element={<WomenShop />} />
-
             <Route path="/branches" element={<Branches />} />
             <Route path="/location" element={<Location />} />
             <Route path="/contact" element={<Contact />} />
@@ -63,9 +64,9 @@ function App() {
 
             <Route path="/singleproduct/:id" element={<SingleProduct />} />
           </Routes>
-        </ProductContext.Provider>
 
-        <Footer />
+          <Footer />
+        </ProductContext.Provider>
       </Router>
     </div>
   );

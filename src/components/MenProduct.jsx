@@ -108,7 +108,6 @@ const MenProduct = () => {
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
     } else {
       existedProduct.quantity = 22;
-      console.log(existedProduct.quantity);
     }
     setCartItems(JSON.parse(localStorage.getItem("cartItems")));
   };
