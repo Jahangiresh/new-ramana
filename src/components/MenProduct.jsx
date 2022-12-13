@@ -1,17 +1,19 @@
-import React, { useContext, useEffect, useReducer } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import "../assets/css/product.scss";
 import arrow from "../assets/images/Arrow.png";
 import axios from "axios";
 import LoadingBox from "./LoadingBox";
 import ReactPaginate from "react-paginate";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { BsBag, BsHeart, BsHeartFill, BsBagFill } from "react-icons/bs";
+
 import { ProductContext } from "../ProductContext";
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "FETCH_REQUEST":
@@ -70,8 +72,8 @@ const MenProduct = () => {
     }
   };
 
-  //localStorage
-  const { favorites, setFavorites } = useContext(ProductContext);
+  const { favorites, setFavorites, cartItems, setCartItems } =
+    useContext(ProductContext);
 
   const handlePageClick = async (data) => {
     let currentPage = data.selected + 1;
@@ -84,23 +86,33 @@ const MenProduct = () => {
     let FavoritProds = JSON.parse(localStorage.getItem("favorites"));
     let existedProduct = FavoritProds.find((fav) => fav.id === product.id);
 
-    if (existedProduct) {
-      
-      console.log(favorites.indexOf(existedProduct));
-      favorites.splice(favorites.indexOf(existedProduct), 1);
+    if (!existedProduct) {
+      product.isFav = true;
 
-      // const updatedArray = FavoritProds.filter(
-      //   (fav) => fav.id !== existedProduct.id
-      // );
-
-      // setFavorites(updatedArray);
-    } else {
       favorites.push(product);
-    }
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    } else {
+      const updatedArray = FavoritProds.filter((fav) => fav.id !== product.id);
+      product.isFav = false;
 
-    // console.log(favorites);
+      setFavorites(updatedArray);
+      localStorage.setItem("favorites", JSON.stringify(updatedArray));
+    }
+    setFavorites(JSON.parse(localStorage.getItem("favorites")));
   };
+
+  const cartHandler = (product) => {
+    let existedProduct = cartItems.find((item) => item.id === product.id);
+    if (!existedProduct) {
+      cartItems.push(product);
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    } else {
+      existedProduct.quantity = 22;
+      console.log(existedProduct.quantity);
+    }
+    setCartItems(JSON.parse(localStorage.getItem("cartItems")));
+  };
+
   return loading ? (
     <div>
       <LoadingBox />
@@ -112,14 +124,25 @@ const MenProduct = () => {
           return (
             <div key={product.id} className="product__box col-6">
               <div className="icons__div__product">
-                <span className="icons__div__product__bag">
-                  <BsBag />
+                <span
+                  onClick={() => cartHandler(product)}
+                  className="icons__div__product__bag"
+                >
+                  {cartItems && cartItems.find((c) => c.id === product.id) ? (
+                    <BsBagFill />
+                  ) : (
+                    <BsBag />
+                  )}
                 </span>
                 <span
                   onClick={() => favoriteHandler(product)}
                   className="icons__div__product__heart"
                 >
-                  <BsHeart />
+                  {favorites && favorites.find((f) => f.id === product.id) ? (
+                    <BsHeartFill />
+                  ) : (
+                    <BsHeart />
+                  )}
                 </span>
               </div>
               <div

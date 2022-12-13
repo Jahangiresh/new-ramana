@@ -28,6 +28,7 @@ const Header = () => {
     <div
       style={{
         background:
+          window.location.pathname === "/likes" ||
           window.location.pathname === "/checkout" ||
           window.location.pathname === "/singleproduct/1"
             ? "black"

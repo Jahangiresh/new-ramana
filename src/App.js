@@ -17,9 +17,11 @@ import WomenShop from "./pages/WomenShop";
 import Shop from "./pages/Shop";
 import { useState, useEffect, useMemo } from "react";
 import { ProductContext } from "./ProductContext";
+import Likes from "./pages/Likes";
 
 function App() {
   const [favorites, setFavorites] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     if (localStorage.getItem("favorites")) {
@@ -27,15 +29,16 @@ function App() {
     } else {
       localStorage.setItem("favorites", JSON.stringify(favorites));
     }
+    if (localStorage.getItem("cartItems")) {
+      setCartItems(JSON.parse(localStorage.getItem("cartItems")));
+    } else {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
   }, []);
-
-  const providerValue = useMemo(
-    () => ({ favorites, setFavorites }),
-    [favorites, setFavorites]
+  const favoritesValue = useMemo(
+    () => ({ favorites, setFavorites, cartItems, setCartItems }),
+    [favorites, setFavorites, cartItems, setCartItems]
   );
-
-  // const [favorites, setFavorites] = useState();xzxczxcxz
-
 
   return (
     <div className="App">
@@ -43,7 +46,7 @@ function App() {
         <Header />
         <CookieModal />
         <ScrollToTop />
-        <ProductContext.Provider value={providerValue}>
+        <ProductContext.Provider value={favoritesValue}>
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/shop" element={<Shop />} />
@@ -56,6 +59,8 @@ function App() {
             <Route path="/search" element={<Search />} />
             <Route path="/*" element={<NothingPage />} />
             <Route path="/about" element={<About />} />
+            <Route path="/likes" element={<Likes />} />
+
             <Route path="/singleproduct/:id" element={<SingleProduct />} />
           </Routes>
         </ProductContext.Provider>

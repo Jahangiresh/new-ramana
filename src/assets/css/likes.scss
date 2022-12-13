@@ -1,0 +1,137 @@
+.likes {
+  margin: 177px 0 100px 0;
+  &__container {
+    .title__h {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: uppercase;
+
+      color: #363636;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #363636;
+      margin-bottom: 51px;
+    }
+    &__content {
+      justify-content: space-between;
+      @media (max-width: 576px) {
+        padding: 0 13px;
+      }
+      .product__box {
+        width: 32%;
+        background: #dad9d6;
+        margin-bottom: 20px;
+        position: relative;
+        .icons__div__product {
+          position: absolute;
+          top: 22px;
+          right: 31px;
+          z-index: 2;
+          display: flex;
+          gap: 20px;
+          @media (max-width: 576px) {
+            right: 10px;
+            gap: 10px;
+
+            top: 10px;
+          }
+          svg {
+            font-size: 19px;
+            cursor: pointer;
+            @media (max-width: 576px) {
+              font-size: 15px;
+            }
+          }
+        }
+        &:hover {
+          .produc__img {
+            transform: scale(1.2);
+          }
+        }
+        @media (max-width: 568px) {
+          width: 48%;
+          padding-top: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        &__image {
+          height: 300px;
+          width: 100%;
+          padding: 26px;
+          @media (max-width: 576px) {
+            width: 155px;
+            height: 120px;
+            margin-top: 20px;
+            padding: 0;
+          }
+          .slick-slider {
+            height: 100%;
+            .slick-list {
+              height: 100%;
+              .slick-track {
+                height: 100%;
+              }
+              .slick-slide {
+                height: 100%;
+                & > div {
+                  height: 100%;
+                }
+              }
+            }
+          }
+
+          img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            object-position: center;
+            transition: 100ms ease-in;
+          }
+        }
+        &__content {
+          display: flex;
+          padding-bottom: 23px;
+          @media (max-width: 568px) {
+            padding-bottom: 3px;
+          }
+          &__arrow {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            @media (max-width: 568px) {
+              display: none;
+            }
+          }
+          &__details {
+            @media (max-width: 568px) {
+              width: 100% !important;
+              // padding-left: 14px;
+            }
+            h3 {
+              font-family: "Inter";
+              font-style: normal;
+              font-weight: 700;
+              font-size: 16px;
+              color: #363636;
+              margin: 0;
+              text-transform: uppercase;
+              @media (max-width: 568px) {
+                font-size: 10px;
+              }
+            }
+            span {
+              color: #363636;
+              font-weight: 300;
+              @media (max-width: 568px) {
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
