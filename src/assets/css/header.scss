@@ -27,7 +27,8 @@
       align-items: center;
       &__logo {
         padding: 0;
-        @media (max-width: 576px) {
+
+        @media (max-width: 768px) {
           display: flex;
           justify-content: center;
         }
@@ -186,7 +187,7 @@
               text-transform: uppercase;
               color: #ffffff;
 
-              @media (max-width: 576px) {
+              @media (max-width: 768px) {
                 display: none;
               }
             }

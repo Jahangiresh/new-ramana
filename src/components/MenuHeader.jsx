@@ -11,7 +11,7 @@ const Header = () => {
     <div style={{ background: "#fff" }} className="header">
       <div className="header__container container">
         <div className="header__container__row row">
-          <div className="header__container__row__logo col-3 d-block d-sm-none">
+          <div className="header__container__row__logo col-3 d-block d-md-none">
             <Button>
               <FiMenu style={{ color: "#363636" }} className="my__menu__icon" />
             </Button>
@@ -19,7 +19,7 @@ const Header = () => {
           <div className="header__container__row__logo col-6">
             <Ramanalogo />
           </div>
-          <div className="header__container__row__navs col-3 col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+          <div className="header__container__row__navs col-3 ">
             <ul className="header__container__row__navs__icons">
               <li>
                 <Link className="nav__icons__link">

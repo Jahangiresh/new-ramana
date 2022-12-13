@@ -5,16 +5,14 @@ import Button from "@mui/material/Button";
 import "../assets/css/menuslider.scss";
 import { FiMenu } from "react-icons/fi";
 import MenuHeader from "./MenuHeader";
-import MenuAccordion from "./MenuAccordion";
 import { BsChevronRight } from "react-icons/bs";
 import { BsChevronLeft } from "react-icons/bs";
-import { useState, useEffect } from "react";
+import Menunavs from "./Menunavs";
 
 export default function Menuslider() {
   const [state, setState] = React.useState({
     left: false,
   });
-
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event &&
@@ -37,27 +35,9 @@ export default function Menuslider() {
         <MenuHeader />
       </Box>
       <div className="menu__content">
-        <div className="menswear__content ">
-          <MenuAccordion />
-        </div>
         <ul className="menu__content__ul">
           <li>
-            <span className="title__span">menswear</span>
-            <span className="span__icon">
-              <BsChevronRight />
-            </span>
-          </li>
-          <li>
-            <span className="title__span">womenswear</span>
-            <span className="span__icon">
-              <BsChevronRight />
-            </span>
-          </li>
-          <li>
-            <span className="title__span">kidswear</span>
-            <span className="span__icon">
-              <BsChevronRight />
-            </span>
+            <Menunavs />
           </li>
         </ul>
       </div>

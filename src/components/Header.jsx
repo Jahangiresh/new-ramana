@@ -16,6 +16,7 @@ import { useState } from "react";
 import Cart from "./Cart";
 import { useContext } from "react";
 import { ProductContext } from "../ProductContext";
+import Login from "./Login";
 const Header = () => {
   const navigate = useNavigate();
 
@@ -39,7 +40,7 @@ const Header = () => {
     >
       <div className="header__container container">
         <div className="header__container__row row">
-          <div className="header__container__row__logo col-3 d-block d-sm-none">
+          <div className="header__container__row__logo col-3  d-block d-md-none">
             <Menuslider />
           </div>
           <div className="header__container__row__logo col-6">
@@ -47,7 +48,7 @@ const Header = () => {
               <Ramanalogo />
             </Link>
           </div>
-          <div className="header__container__row__navs col-3 col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+          <div className="header__container__row__navs col-3 col-xl-6 col-lg-6 col-md-6 ">
             <ul className="header__container__row__navs__ul">
               <li id="products">
                 <Link to="/shop" className="nav__links">
@@ -177,7 +178,7 @@ const Header = () => {
               </li>
               <li className="d-none d-md-block">
                 <Link className="nav__icons__link">
-                  <AiOutlineUser />
+                  <Login />
                 </Link>
               </li>
               <li className="d-none d-md-block">

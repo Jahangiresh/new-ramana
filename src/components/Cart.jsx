@@ -16,8 +16,12 @@ function OffCanvasExample({ name, ...props }) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   const removeHandler = (item) => {
-const cart
+    let cart = [];
+    cart = cartItems.filter((c) => c.id !== item.id);
+    setCartItems(cart);
+    console.log(cart);
   };
   return (
     <>
@@ -61,7 +65,7 @@ const cart
             <div className="cart__body__products">
               {cartItems &&
                 cartItems.map((item) => (
-                  <div className="cart__body__products__item">
+                  <div key={item.id} className="cart__body__products__item">
                     <div className="cart__body__products__item__content">
                       <h3 className="cart__body__products__item__content__h">
                         {item.title}
@@ -81,6 +85,18 @@ const cart
                     </div>
                   </div>
                 ))}
+            </div>
+
+            <div className="cart__body__total">
+              <span className="cart__body__total__span">
+                your total{" "}
+                {cartItems.reduce((total, item) => +item.price + total, 0)} azn
+              </span>
+              <div className="cart__body__total__button">
+                <button className="cart__body__total__button__btn">
+                  checkout
+                </button>
+              </div>
             </div>
           </div>
         </div>

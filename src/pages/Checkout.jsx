@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import { ProductContext } from "../ProductContext";
 
 const Checkout = () => {
   const [fullname, setFullname] = useState(String);
   const [email, setEmail] = useState(String);
   const [address, setAddress] = useState(String);
   const [number, setNumber] = useState(Number);
-
+  const { cartItems } = useContext(ProductContext);
   return (
     <div>
       <section className="main">
@@ -32,84 +34,37 @@ const Checkout = () => {
             </div>
           </div>
           <div className="main__container__orders">
-            <div className="main__container__orders__row row">
-              <div className="main__container__orders__row__title col-6">
-                <p>brown leather shoes - 150 azn</p>
-                <span>43 / black / calfskin</span>
-              </div>
-              <div className="main__container__orders__row__product col-5">
-                <div className="main__container__orders__row__product__image">
-                  <img
-                    src="https://m.media-amazon.com/images/I/817NXl9u6RL._AC_SL1500_.jpg"
-                    alt=""
-                  />
+            {cartItems &&
+              cartItems.map((item) => (
+                <div className="main__container__orders__row row">
+                  <div className="main__container__orders__row__title col-6">
+                    <p>
+                      {item.title} - {item.price} azn
+                    </p>
+                    <span>{item.materials}</span>
+                  </div>
+                  <div className="main__container__orders__row__product col-5">
+                    <div className="main__container__orders__row__product__image">
+                      <img
+                        src="https://m.media-amazon.com/images/I/817NXl9u6RL._AC_SL1500_.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div className="x col-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19"
+                      height="19"
+                      fill="currentColor"
+                      className="bi bi-x-lg svg__remove"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-              <div className="x col-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="19"
-                  height="19"
-                  fill="currentColor"
-                  className="bi bi-x-lg svg__remove"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
-                </svg>
-              </div>
-            </div>
-            <div className="main__container__orders__row row">
-              <div className="main__container__orders__row__title col-6">
-                <p>brown leather shoes - 150 azn</p>
-                <span>43 / black / calfskin</span>
-              </div>
-              <div className="main__container__orders__row__product col-5">
-                <div className="main__container__orders__row__product__image">
-                  <img
-                    src="https://m.media-amazon.com/images/I/71vD26G+ECL._AC_UL320_.jpg"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div className="x col-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="19"
-                  height="19"
-                  fill="currentColor"
-                  className="bi bi-x-lg svg__remove"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
-                </svg>
-              </div>
-            </div>
-            <div className="main__container__orders__row row">
-              <div className="main__container__orders__row__title col-6">
-                <p>brown leather shoes - 150 azn</p>
-                <span>43 / black / calfskin</span>
-              </div>
-              <div className="main__container__orders__row__product col-5">
-                <div className="main__container__orders__row__product__image">
-                  <img
-                    src="https://static-01.daraz.lk/p/e2c25df7e59f65901af2d7b0fa882473.jpg"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div className="x col-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="19"
-                  height="19"
-                  fill="currentColor"
-                  className="bi bi-x-lg svg__remove"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
-                </svg>
-              </div>
-            </div>
+              ))}
           </div>
           <div className="main__container__inputs row">
             <div className="main__container__inputs__name col-6">

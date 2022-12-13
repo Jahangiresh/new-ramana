@@ -1,0 +1,177 @@
+.offcanvas-end {
+  width: 50% !important;
+}
+.cart {
+  &__header {
+    height: 106px;
+    display: flex;
+    align-items: center;
+    &__ul {
+      margin: 0;
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+      &__li {
+        text-decoration: none;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 26px;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        color: #363636;
+      }
+    }
+    &__icons {
+      margin: 0;
+      display: flex;
+      justify-content: space-around;
+      padding: 0 40px;
+      &__li {
+        text-decoration: none;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+
+        color: #363636;
+      }
+    }
+  }
+  &__body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 80px;
+    // margin-top: 40px;
+    &__accept {
+      margin-top: 10px;
+      width: 100%;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      text-transform: uppercase;
+      text-align: center;
+      color: #363636;
+    }
+    &__reset {
+      margin-top: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: right;
+      text-transform: uppercase;
+      color: #363636;
+    }
+    &__email {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      color: #363636;
+      .auth__input {
+        border: none;
+        border-bottom: 1px solid #363636;
+        outline: none;
+      }
+    }
+    &__button {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      .register__button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: right;
+        text-transform: uppercase;
+        color: #363636;
+        margin-top: 40px;
+        &__register {
+          padding: 14px 30px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 700;
+          background: #363636;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          text-transform: uppercase;
+          color: #fff;
+          transition: 100ms ease;
+          margin-top: 10px;
+          &:hover {
+            color: black;
+            background: #fff;
+          }
+        }
+      }
+      &__btn {
+        padding: 14px 30px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        background: transparent;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #363636;
+        transition: 100ms ease;
+        &:hover {
+          color: #fff;
+          background: black;
+        }
+      }
+    }
+    &__span {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      text-transform: uppercase;
+
+      color: #363636;
+    }
+    &__h {
+      width: 100%;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 145.83%;
+      text-transform: uppercase;
+      text-align: center;
+      color: #363636;
+    }
+  }
+}
