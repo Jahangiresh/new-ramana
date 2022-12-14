@@ -5,9 +5,41 @@
   font-size: 16px;
   color: white;
 }
+.menu__footer {
+  position: absolute;
+  bottom: 0;
+  height: 55px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #363636;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+
+  color: #363636;
+}
 
 .menu__content {
   margin-top: 62px;
+
+  &__icons {
+    position: absolute;
+    bottom: 85px;
+    margin: 0;
+    display: flex;
+    padding: 0 70px;
+    width: 100%;
+    justify-content: space-between;
+    &__link {
+      color: #363636;
+    }
+  }
   .menswear__content__active {
     right: 0 !important;
   }

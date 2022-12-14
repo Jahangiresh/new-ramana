@@ -3,11 +3,14 @@ import Box from "@mui/material/Box";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Button from "@mui/material/Button";
 import "../assets/css/menuslider.scss";
-import { FiMenu } from "react-icons/fi";
+import { FiGlobe, FiMenu } from "react-icons/fi";
 import MenuHeader from "./MenuHeader";
-import { BsChevronRight } from "react-icons/bs";
+import { BsChevronRight, BsHeart, BsHeartFill, BsSearch } from "react-icons/bs";
 import { BsChevronLeft } from "react-icons/bs";
 import Menunavs from "./Menunavs";
+import { Link } from "react-router-dom";
+import Cart from "./Cart";
+import Login from "./Login";
 
 export default function Menuslider() {
   const [state, setState] = React.useState({
@@ -40,7 +43,33 @@ export default function Menuslider() {
             <Menunavs />
           </li>
         </ul>
+        <ul
+          onClick={toggleDrawer(anchor, false)}
+          className="menu__content__icons"
+        >
+          <Link className="menu__content__icons__link" to="/search">
+            <BsSearch />
+          </Link>
+          <Link className="menu__content__icons__link" to="/likes">
+            {window.location.pathname === "/likes" ? (
+              <BsHeartFill />
+            ) : (
+              <BsHeart />
+            )}
+          </Link>
+
+          <Link className="menu__content__icons__link">
+            <Cart />
+          </Link>
+          <Link className="menu__content__icons__link">
+            <Login />
+          </Link>
+          <Link className="menu__content__icons__link">
+            <FiGlobe />
+          </Link>
+        </ul>
       </div>
+      <div className="menu__footer">© 2022 Ramana castle</div>
 
       {/* <MenuAccordion /> */}
     </>
