@@ -1,21 +1,31 @@
 import React from "react";
-import shopCover from "../assets/images/unsplash_hCG34GSdYTA.png";
+import menCover from "../assets/images/unsplash_hCG34GSdYTA.png";
+import womenCover from "../assets/images/womenshopcover.png";
+
 import "../assets/css/shop.scss";
 import { RiArrowUpDownLine } from "react-icons/ri";
 // import { VscChevronDown } from "react-icons/vsc";
 import filterIcon from "../assets/images/filter.png";
 import Checkbox from "@mui/material/Checkbox";
 import MenProduct from "../components/MenProduct";
+import { useContext } from "react";
+import { StoreContext } from "../StoreContext";
+import Categories from "../components/Categories";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const Shop = () => {
-  
+  const { gender } = useContext(StoreContext);
+
   return (
     <>
       <div className="shop">
         <div className="shop__cover">
-          <img src={shopCover} alt="" />
+          {gender && gender === "male" ? (
+            <img src={menCover} alt="" />
+          ) : (
+            <img src={womenCover} alt="" />
+          )}
           <h1>
-            men's <br /> footwear
+            {gender && gender === "male" ? "men's" : "women's"} <br /> footwear
           </h1>
         </div>
         <div className="shop__content">
@@ -42,7 +52,7 @@ const Shop = () => {
                 <li id="categories" className="col-2 filter__li li__none">
                   categories
                   <div className="filter__categories__hover">
-                    <ul className="filter__categories__hover__ul">
+                    {/* <ul className="filter__categories__hover__ul">
                       <li className="filter__categories__hover__ul__li">
                         <Checkbox {...label} /> salam
                       </li>
@@ -52,7 +62,8 @@ const Shop = () => {
                       <li className="filter__categories__hover__ul__li">
                         <Checkbox {...label} /> salam
                       </li>
-                    </ul>
+                    </ul> */}
+                    <Categories />
                   </div>
                 </li>
                 <li className="col-1 filter__li">

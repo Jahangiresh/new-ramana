@@ -16,7 +16,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import WomenShop from "./pages/WomenShop";
 import Shop from "./pages/Shop";
 import { useState, useEffect, useMemo } from "react";
-import { ProductContext } from "./ProductContext";
+import { StoreContext } from "./StoreContext";
 import Likes from "./pages/Likes";
 import OffCanvasExample from "./components/Cart";
 import Cart from "./components/Cart";
@@ -24,6 +24,8 @@ import Cart from "./components/Cart";
 function App() {
   const [favorites, setFavorites] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
+  const [gender, setGender] = useState("");
 
   useEffect(() => {
     if (localStorage.getItem("favorites")) {
@@ -38,20 +40,38 @@ function App() {
     }
   }, []);
   const favoritesValue = useMemo(
-    () => ({ favorites, setFavorites, cartItems, setCartItems }),
-    [favorites, setFavorites, cartItems, setCartItems]
+    () => ({
+      favorites,
+      setFavorites,
+      cartItems,
+      setCartItems,
+      userInfo,
+      setUserInfo,
+      gender,
+      setGender,
+    }),
+    [
+      favorites,
+      setFavorites,
+      cartItems,
+      setCartItems,
+      userInfo,
+      setUserInfo,
+      gender,
+      setGender,
+    ]
   );
 
   return (
     <div className="App">
       <Router>
-        <ProductContext.Provider value={favoritesValue}>
+        <StoreContext.Provider value={favoritesValue}>
           <Header />
           <CookieModal />
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/shop" element={<Shop />} />
+            <Route path="/shop/:gender" element={<Shop />} />
             <Route path="/womenshop" element={<WomenShop />} />
             <Route path="/branches" element={<Branches />} />
             <Route path="/location" element={<Location />} />
@@ -66,7 +86,7 @@ function App() {
           </Routes>
 
           <Footer />
-        </ProductContext.Provider>
+        </StoreContext.Provider>
       </Router>
     </div>
   );

@@ -5,12 +5,11 @@ import Button from "@mui/material/Button";
 import "../assets/css/menuslider.scss";
 import { FiGlobe, FiMenu } from "react-icons/fi";
 import MenuHeader from "./MenuHeader";
-import { BsChevronRight, BsHeart, BsHeartFill, BsSearch } from "react-icons/bs";
-import { BsChevronLeft } from "react-icons/bs";
+import { BsHeart, BsHeartFill, BsSearch } from "react-icons/bs";
 import Menunavs from "./Menunavs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cart from "./Cart";
-import Login from "./Login";
+import Login from "./Auth";
 
 export default function Menuslider() {
   const [state, setState] = React.useState({
@@ -27,7 +26,7 @@ export default function Menuslider() {
 
     setState({ ...state, [anchor]: open });
   };
-
+  const navigate = useNavigate();
   const list = (anchor) => (
     <>
       <Box
@@ -41,6 +40,20 @@ export default function Menuslider() {
         <ul className="menu__content__ul">
           <li>
             <Menunavs />
+          </li>
+          <li
+            onClick={() => navigate("/about")}
+            style={{ height: "55px", paddingRight: "24px" }}
+            className="menu__content__ul__li"
+          >
+            about us
+          </li>
+          <li
+            onClick={() => navigate("/contact")}
+            style={{ height: "55px", paddingRight: "24px" }}
+            className="menu__content__ul__li"
+          >
+            contact
           </li>
         </ul>
         <ul

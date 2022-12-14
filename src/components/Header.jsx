@@ -1,22 +1,12 @@
 import React from "react";
 import "../assets/css/header.scss";
 import { FiGlobe } from "react-icons/fi";
-import {
-  BsBag,
-  BsHeart,
-  BsHeartFill,
-  BsSearch,
-  BsBagFill,
-} from "react-icons/bs";
-import { AiOutlineUser } from "react-icons/ai";
+import { BsHeart, BsHeartFill, BsSearch } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import Ramanalogo from "./Ramanalogo";
 import Menuslider from "./Menuslider";
-import { useState } from "react";
 import Cart from "./Cart";
-import { useContext } from "react";
-import { ProductContext } from "../ProductContext";
-import Login from "./Login";
+import Login from "./Auth";
 const Header = () => {
   const navigate = useNavigate();
 
@@ -57,7 +47,7 @@ const Header = () => {
                 <div className="products__hover">
                   <ul className="products__hover__ul">
                     <li id="men">
-                      <Link to="/shop" className="nav__links">
+                      <Link to="/shop/male" className="nav__links">
                         men
                       </Link>
                     </li>
@@ -107,7 +97,7 @@ const Header = () => {
                       </ul>
                     </div>
                     <li>
-                      <Link to="/womenshop" className="nav__links">
+                      <Link to="/shop/female" className="nav__links">
                         women
                       </Link>
                     </li>

@@ -5,6 +5,12 @@
   border-bottom: 2px solid #363636;
   padding-bottom: 10px;
   margin-bottom: 51px;
+  @media (max-width: 768px) {
+    border: none;
+    text-align: center;
+    padding-bottom: 0px;
+    padding: 0;
+  }
 }
 .main__container__checkout__span {
   font-style: normal;
@@ -30,9 +36,10 @@
     @media (max-width: 768px) {
       padding: 30px;
     }
+
     @media (max-width: 576px) {
-        width: 100%;
-        text-align: center;
+      width: 100%;
+      text-align: center;
     }
   }
 }
@@ -50,6 +57,9 @@
   border-bottom: 2px solid #363636;
   padding-bottom: 14px;
   margin-bottom: 47px;
+  @media (max-width: 768px) {
+    padding: 0 20px 14px 20px;
+  }
 }
 .main__container__orders__row__title {
   padding: 0;
@@ -62,6 +72,14 @@
 .main__container__orders__row__title p {
   font-weight: 700;
   margin: 0;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+.main__container__orders__row__title span {
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 .main__container__orders__row__product {
   padding: 0;
@@ -89,6 +107,9 @@
 .main__container__inputs {
   justify-content: space-between;
   margin-bottom: 51px;
+  @media (max-width: 768px) {
+    padding: 0 20px 0px 20px;
+  }
 }
 .main__container__inputs__name {
   border-bottom: 2px solid #363636;
@@ -97,6 +118,9 @@
   justify-content: space-between;
   width: 48%;
   margin-bottom: 51px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 .main__container__inputs__name__box {
   margin-bottom: 14px;
@@ -124,10 +148,12 @@
   font-size: 16px;
   text-transform: uppercase;
   margin-right: 5px;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 .main__container__inputs__name .addressss {
   position: relative;
-  width: 60px;
   float: right;
   display: flex;
   justify-content: end;
@@ -173,10 +199,15 @@
 .main__container__orderinfo {
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    flex-direction: column;
+  }
 }
 .payment__box {
   display: flex;
   position: relative;
+
   &:hover {
     .payment__hover {
       height: 120px;
@@ -238,6 +269,10 @@
   align-items: center;
   justify-content: center;
   width: 23%;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 }
 .main__container__button {
   width: 100%;

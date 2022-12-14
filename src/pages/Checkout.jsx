@@ -1,17 +1,25 @@
-import React, { useState } from "react";
-import { useContext } from "react";
-import { ProductContext } from "../ProductContext";
+import React, { useState, useContext } from "react";
+import { useEffect } from "react";
+import { redirect } from "react-router-dom";
+import { StoreContext } from "../StoreContext";
 
 const Checkout = () => {
   const [fullname, setFullname] = useState(String);
   const [email, setEmail] = useState(String);
   const [address, setAddress] = useState(String);
   const [number, setNumber] = useState(Number);
-  const { cartItems } = useContext(ProductContext);
+
+  const { cartItems, setCartItems } = useContext(StoreContext);
+  const removeHandler = (item) => {
+    let cart = [];
+    cart = cartItems.filter((c) => c.id !== item.id);
+    setCartItems(cart);
+    localStorage.setItem("cartItems", JSON.stringify(cart));
+  };
   return (
     <div>
       <section className="main">
-        <div className="main__container container p-0">
+        <div className="main__container container ">
           <div className="main__container__checkout">
             <span className="main__container__checkout__span">checkout</span>
           </div>
@@ -36,7 +44,7 @@ const Checkout = () => {
           <div className="main__container__orders">
             {cartItems &&
               cartItems.map((item) => (
-                <div className="main__container__orders__row row">
+                <div key={item.id} className="main__container__orders__row row">
                   <div className="main__container__orders__row__title col-6">
                     <p>
                       {item.title} - {item.price} azn
@@ -51,7 +59,7 @@ const Checkout = () => {
                       />
                     </div>
                   </div>
-                  <div className="x col-1">
+                  <div onClick={() => removeHandler(item)} className="x col-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="19"

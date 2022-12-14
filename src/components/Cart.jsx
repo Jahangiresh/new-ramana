@@ -7,14 +7,14 @@ import ShoeImg from "../assets/images/shoeWomen.png";
 import { FiGlobe } from "react-icons/fi";
 import { BsBag, BsHeart, BsSearch } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
-import { ProductContext } from "../ProductContext";
+import { StoreContext } from "../StoreContext";
 import { useContext } from "react";
 import "../assets/css/header.scss";
 import Ramanalogo from "./RamanalogoBlack";
 import { FiMenu } from "react-icons/fi";
 import Button from "@mui/material/Button";
 function OffCanvasExample({ name, ...props }) {
-  const { cartItems, setCartItems } = useContext(ProductContext);
+  const { cartItems, setCartItems } = useContext(StoreContext);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -24,7 +24,7 @@ function OffCanvasExample({ name, ...props }) {
     let cart = [];
     cart = cartItems.filter((c) => c.id !== item.id);
     setCartItems(cart);
-    console.log(cart);
+    localStorage.setItem("cartItems", JSON.stringify(cart));
   };
   const mediaMatch = window.matchMedia("(max-width: 576px)");
   const navigate = useNavigate();
@@ -138,9 +138,17 @@ function OffCanvasExample({ name, ...props }) {
                 {cartItems.reduce((total, item) => +item.price + total, 0)} azn
               </span>
               <div className="cart__body__total__button">
-                <button className="cart__body__total__button__btn">
-                  checkout
-                </button>
+                <Link
+                  className="cart__body__total__button__btn__link"
+                  to="checkout"
+                >
+                  <button
+                    onClick={handleClose}
+                    className="cart__body__total__button__btn"
+                  >
+                    checkout
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

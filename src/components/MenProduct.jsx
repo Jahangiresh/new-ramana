@@ -5,14 +5,14 @@ import axios from "axios";
 import LoadingBox from "./LoadingBox";
 import ReactPaginate from "react-paginate";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { BsBag, BsHeart, BsHeartFill, BsBagFill } from "react-icons/bs";
 
-import { ProductContext } from "../ProductContext";
+import { StoreContext } from "../StoreContext";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -45,12 +45,19 @@ const MenProduct = () => {
     loading: true,
     error: false,
   });
+
+  const { setGender } = useContext(StoreContext);
+  const params = useParams();
+  const productGender = params.gender;
+
   useEffect(() => {
     const getProducts = async () => {
       dispatch({ type: "FETCH_REQUEST" });
       try {
+        setGender(productGender);
+
         const resp = await axios.get(
-          "http://localhost:3000/products?_page=1&_limit=9"
+          `http://localhost:3000/products?gender=${productGender}`
         );
 
         dispatch({ type: "FETCH_SUCCESS", payload: resp.data });
@@ -59,27 +66,27 @@ const MenProduct = () => {
       dispatch({ type: "FETCH_FAIL" });
     };
     getProducts();
-  }, []);
+  }, [productGender]);
 
-  const fetchProducts = async (currentPage) => {
-    try {
-      const res = await axios.get(
-        `http://localhost:3000/products?_page=${currentPage}&_limit=9`
-      );
-      return res.data;
-    } catch (error) {
-      alert("error");
-    }
-  };
+  // const fetchProducts = async (currentPage) => {
+  //   try {
+  //     const res = await axios.get(
+  //       `http://localhost:3000/products?_page=${currentPage}&_limit=9`
+  //     );
+  //     return res.data;
+  //   } catch (error) {
+  //     alert("error");
+  //   }
+  // };
 
   const { favorites, setFavorites, cartItems, setCartItems } =
-    useContext(ProductContext);
+    useContext(StoreContext);
 
-  const handlePageClick = async (data) => {
-    let currentPage = data.selected + 1;
-    const menproductsFormServer = await fetchProducts(currentPage);
-    dispatch({ type: "FETCH_SUCCESS", payload: menproductsFormServer });
-  };
+  // const handlePageClick = async (data) => {
+  //   let currentPage = data.selected + 1;
+  //   const menproductsFormServer = await fetchProducts(currentPage);
+  //   dispatch({ type: "FETCH_SUCCESS", payload: menproductsFormServer });
+  // };
 
   //localFavadd
   const favoriteHandler = (product) => {
@@ -182,7 +189,6 @@ const MenProduct = () => {
           nextLabel=<HiArrowRight className="page__arrow__icon" />
           pageRangeDisplayed={5}
           pageCount={products.length}
-          onPageChange={handlePageClick}
           renderOnZeroPageCount={null}
           activeClassName={"active__page"}
         />

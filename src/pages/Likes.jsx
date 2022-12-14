@@ -3,7 +3,7 @@ import "../assets/css/likes.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { ProductContext } from "../ProductContext";
+import { StoreContext } from "../StoreContext";
 import { BsBag, BsHeart, BsHeartFill, BsBagFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import arrow from "../assets/images/Arrow.png";
@@ -22,7 +22,7 @@ const Likes = () => {
   };
   const navigate = useNavigate();
   const { favorites, setFavorites, cartItems, setCartItems } =
-    useContext(ProductContext);
+    useContext(StoreContext);
   //localFavadd
   const favoriteHandler = (product) => {
     let FavoritProds = JSON.parse(localStorage.getItem("favorites"));
