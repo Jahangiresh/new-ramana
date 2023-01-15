@@ -14,6 +14,7 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 import { useContext } from "react";
 import { StoreContext } from "../StoreContext";
+import toast, { Toaster } from "react-hot-toast";
 
 function OffCanvasExample({ name, ...props }) {
   const [show, setShow] = useState(false);
@@ -21,13 +22,11 @@ function OffCanvasExample({ name, ...props }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const mediaMatch = window.matchMedia("(max-width: 576px)");
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const { userInfo, setUserinfo } = useContext(StoreContext);
 
-  const submitHandler = async (e) => {
+  const loginHandler = async (e) => {
     e.preventDefault();
     try {
       const { data } = await axios.post("http://localhost:3000/login", {
@@ -35,14 +34,15 @@ function OffCanvasExample({ name, ...props }) {
         password,
       });
       setUserinfo(localStorage.setItem("userInfo", JSON.stringify({ data })));
-      console.log("sa");
+      toast.success("Successfully toasted!");
     } catch (err) {
-      console.log("sasda");
+      toast.error("try again!");
     }
   };
 
   return (
     <>
+      <Toaster position="bottom-left" reverseOrder={true} />
       <span onClick={handleShow}>
         <AiOutlineUser />
       </span>
@@ -116,7 +116,7 @@ function OffCanvasExample({ name, ...props }) {
             )}
           </div>
           {isRegister ? (
-            <form onSubmit={submitHandler} method="POST">
+            <form method="POST">
               <div className="cart__body ">
                 <h2 className="cart__body__h">log in</h2>
 
@@ -149,7 +149,7 @@ function OffCanvasExample({ name, ...props }) {
 
                 <div className="cart__body__button">
                   <button
-                    onClick={submitHandler}
+                    onClick={loginHandler}
                     className="cart__body__button__btn"
                   >
                     log in
@@ -218,7 +218,10 @@ function OffCanvasExample({ name, ...props }) {
 
                 <div className="cart__body__button">
                   <div className="register__button">
-                    <button className="register__button__register">
+                    <button
+                      // onClick={() => registerHandler()}
+                      className="register__button__register"
+                    >
                       register
                     </button>
                     <button

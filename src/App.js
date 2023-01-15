@@ -13,7 +13,6 @@ import NothingPage from "./pages/NothingPage";
 import About from "./pages/About";
 import SingleProduct from "./pages/SingleProduct";
 import ScrollToTop from "./components/ScrollToTop";
-import WomenShop from "./pages/WomenShop";
 import Shop from "./pages/Shop";
 import { useState, useEffect, useMemo } from "react";
 import { StoreContext } from "./StoreContext";
@@ -72,7 +71,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/shop/:gender" element={<Shop />} />
-            <Route path="/womenshop" element={<WomenShop />} />
             <Route path="/branches" element={<Branches />} />
             <Route path="/location" element={<Location />} />
             <Route path="/contact" element={<Contact />} />

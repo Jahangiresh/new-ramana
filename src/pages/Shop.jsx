@@ -7,7 +7,7 @@ import { RiArrowUpDownLine } from "react-icons/ri";
 // import { VscChevronDown } from "react-icons/vsc";
 import filterIcon from "../assets/images/filter.png";
 import Checkbox from "@mui/material/Checkbox";
-import MenProduct from "../components/MenProduct";
+import MenProduct from "../components/Product";
 import { useContext } from "react";
 import { StoreContext } from "../StoreContext";
 import Categories from "../components/Categories";

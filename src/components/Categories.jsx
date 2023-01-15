@@ -8,8 +8,6 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const Categories = () => {
   const [categories, setCategories] = useState([]);
 
-
-  
   useEffect(() => {
     const getCategories = async () => {
       const categoriesResp = await axios.get(
@@ -18,7 +16,7 @@ const Categories = () => {
       setCategories(categoriesResp.data);
     };
     getCategories();
-  });
+  }, []);
 
   return (
     <ul className="filter__categories__hover__ul">

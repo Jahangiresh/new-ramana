@@ -13,11 +13,21 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "female"
     },
-
     {
       "id": 1,
       "title": "black leather shoes",
@@ -34,8 +44,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -55,8 +76,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -76,8 +108,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -97,8 +140,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -118,8 +172,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -139,8 +204,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -160,8 +236,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -181,8 +268,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -202,8 +300,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -223,8 +332,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -244,8 +364,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -265,8 +396,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -286,8 +428,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -307,8 +460,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -328,8 +492,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -349,8 +524,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -370,8 +556,19 @@
       ],
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
@@ -390,12 +587,22 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "male",
       "quantity": 1
     },
-
     {
       "id": 22,
       "title": " leather shoes",
@@ -409,8 +616,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "female"
     },
     {
@@ -427,8 +645,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "female"
     },
     {
@@ -445,8 +674,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "female"
     },
     {
@@ -462,8 +702,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "female"
     },
     {
@@ -480,8 +731,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "female"
     },
     {
@@ -499,8 +761,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "female"
     },
     {
@@ -518,8 +791,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "female"
     },
     {
@@ -536,8 +820,19 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "female"
     },
     {
@@ -555,12 +850,22 @@
       "category": "shoes",
       "details": "deridi,dartilir,ayagi sixmir ve gozeldi",
       "materials": "leather,cotton",
-      "sizes": [38, 39, 42, 43, 44],
-      "colors": ["red", "green", "black", "brown"],
+      "sizes": [
+        38,
+        39,
+        42,
+        43,
+        44
+      ],
+      "colors": [
+        "red",
+        "green",
+        "black",
+        "brown"
+      ],
       "gender": "female"
     }
   ],
-
   "categories": [
     "shoes",
     "accessories",

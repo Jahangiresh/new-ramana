@@ -1,0 +1,11 @@
+.icon__lang {
+  &__ul {
+    &__li {
+      color: black !important;
+      list-style: none !important;
+    }
+  }
+}
+.dropdown-toggle::after {
+  display: none;
+}

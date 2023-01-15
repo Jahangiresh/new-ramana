@@ -7,7 +7,12 @@ import Ramanalogo from "./Ramanalogo";
 import Menuslider from "./Menuslider";
 import Cart from "./Cart";
 import Login from "./Auth";
+import { useTranslation } from "react-i18next";
+import HeaderLangs from "./HeaderLangs";
+
 const Header = () => {
+  const { t, i18n } = useTranslation();
+
   const navigate = useNavigate();
 
   document.addEventListener("scroll", () => {
@@ -42,7 +47,7 @@ const Header = () => {
             <ul className="header__container__row__navs__ul">
               <li id="products">
                 <Link to="/shop" className="nav__links">
-                  products
+                  {t("products")}
                 </Link>
                 <div className="products__hover">
                   <ul className="products__hover__ul">
@@ -140,10 +145,10 @@ const Header = () => {
             </ul>
             <ul className="header__container__row__navs__icons">
               <li
-              // style={{
-              //   display:
-              //     window.location.pathname === "/search" ? "none" : "block",
-              // }}
+                style={{
+                  display:
+                    window.location.pathname === "/search" ? "none" : "block",
+                }}
               >
                 <Link to="/search" className="nav__icons__link">
                   <BsSearch />
@@ -173,7 +178,8 @@ const Header = () => {
               </li>
               <li className="d-none d-md-block">
                 <Link className="nav__icons__link">
-                  <FiGlobe />
+                  {/* <FiGlobe /> */}
+                  <HeaderLangs />
                 </Link>
               </li>
             </ul>

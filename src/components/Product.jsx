@@ -15,6 +15,7 @@ import { BsBag, BsHeart, BsHeartFill, BsBagFill } from "react-icons/bs";
 import { StoreContext } from "../StoreContext";
 
 const reducer = (state, action) => {
+
   switch (action.type) {
     case "FETCH_REQUEST":
       return { ...state, loading: true };
@@ -25,6 +26,7 @@ const reducer = (state, action) => {
     default:
       return state;
   }
+  
 };
 
 const MenProduct = () => {
