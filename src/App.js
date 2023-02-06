@@ -23,7 +23,7 @@ import Cart from "./components/Cart";
 function App() {
   const [favorites, setFavorites] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-  const [userInfo, setUserInfo] = useState([]);
+  const [userInfo, setUserInfo] = useState(null);
   const [gender, setGender] = useState("");
 
   useEffect(() => {
@@ -36,6 +36,10 @@ function App() {
       setCartItems(JSON.parse(localStorage.getItem("cartItems")));
     } else {
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
+
+    if (localStorage.getItem("userInfo")) {
+      setUserInfo(JSON.parse(localStorage.getItem("userInfo")));
     }
   }, []);
   const favoritesValue = useMemo(

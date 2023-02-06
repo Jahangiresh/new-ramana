@@ -15,31 +15,20 @@ import axios from "axios";
 import { useContext } from "react";
 import { StoreContext } from "../StoreContext";
 import toast, { Toaster } from "react-hot-toast";
+import Register from "./Register";
+import Signin from "./Login";
+import { RiH1 } from "react-icons/ri";
 
 function OffCanvasExample({ name, ...props }) {
+  const mediaMatch = window.matchMedia("(max-width: 576px)");
   const [show, setShow] = useState(false);
-  const [isRegister, setIsRegister] = useState(true);
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const mediaMatch = window.matchMedia("(max-width: 576px)");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [isRegister, setIsRegister] = useState(true);
+
   const { userInfo, setUserinfo } = useContext(StoreContext);
-
-  const loginHandler = async (e) => {
-    e.preventDefault();
-    try {
-      const { data } = await axios.post("http://localhost:3000/login", {
-        email,
-        password,
-      });
-      setUserinfo(localStorage.setItem("userInfo", JSON.stringify({ data })));
-      toast.success("Successfully toasted!");
-    } catch (err) {
-      toast.error("try again!");
-    }
-  };
-
+  console.log(userInfo);
   return (
     <>
       <Toaster position="bottom-left" reverseOrder={true} />
@@ -115,125 +104,17 @@ function OffCanvasExample({ name, ...props }) {
               </>
             )}
           </div>
-          {isRegister ? (
-            <form method="POST">
-              <div className="cart__body ">
-                <h2 className="cart__body__h">log in</h2>
-
-                <div className="cart__body__email">
-                  <label htmlFor="email">email address</label>
-                  <input
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="auth__input"
-                    type="text"
-                    id="email"
-                  />
-                </div>
-                <div className="cart__body__email">
-                  <label htmlFor="password">password</label>
-                  <input
-                    className="auth__input"
-                    type="password"
-                    id="password"
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-
-                <div className="cart__body__reset">
-                  <div className="cart__body__reset__remember">
-                    <label htmlFor="remember">remember me</label>{" "}
-                    <input name="remember" id="remember" type="checkbox" />
-                  </div>
-                  <span>reset password</span>
-                </div>
-
-                <div className="cart__body__button">
-                  <button
-                    onClick={loginHandler}
-                    className="cart__body__button__btn"
-                  >
-                    log in
-                  </button>
-
-                  <div className="register__button">
-                    <span>dont't have an account</span>
-                    <button
-                      onClick={() => setIsRegister((value) => !value)}
-                      className="register__button__register"
-                    >
-                      register
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </form>
+          {userInfo ? (
+            <h1>salam</h1>
           ) : (
-            <form>
-              <div className="cart__body ">
-                <h2 className="cart__body__h">register</h2>
-                <div className="cart__body__email">
-                  <label htmlFor="name">full name</label>
-                  <input className="auth__input" type="text" id="name" />
-                </div>
-                <div className="cart__body__email">
-                  <label htmlFor="email">email address</label>
-                  <input className="auth__input" type="text" id="email" />
-                </div>
-                <div className="cart__body__email">
-                  <label htmlFor="password">password</label>
-                  <input
-                    className="auth__input"
-                    type="password"
-                    id="password"
-                  />
-                </div>
-                <div className="cart__body__email">
-                  <label htmlFor="birthdate">birth date</label>
-                  <input
-                    className="auth__input"
-                    type="password"
-                    id="birthdate"
-                  />
-                </div>
-                <div className="cart__body__email">
-                  <label htmlFor="phonenumber">phone number</label>
-                  <input
-                    className="auth__input"
-                    type="password"
-                    id="phonenumber"
-                  />
-                </div>
-                <div className="cart__body__accept">
-                  <div className="cart__body__reset__accept__checkbox">
-                    <label htmlFor="remember">join our newsletter</label>{" "}
-                    <input name="remember" id="remember" type="checkbox" />
-                  </div>
-                  <div className="cart__body__reset__accept__checkbox">
-                    <label htmlFor="remember">
-                      agree to the terms and conditions
-                    </label>{" "}
-                    <input name="remember" id="remember" type="checkbox" />
-                  </div>
-                </div>
-
-                <div className="cart__body__button">
-                  <div className="register__button">
-                    <button
-                      // onClick={() => registerHandler()}
-                      className="register__button__register"
-                    >
-                      register
-                    </button>
-                    <button
-                      onClick={() => setIsRegister((value) => !value)}
-                      className="register__button__register"
-                    >
-                      login
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </form>
+            <>
+              {" "}
+              {isRegister ? (
+                <Register setIsRegister={setIsRegister} />
+              ) : (
+                <Signin setIsRegister={setIsRegister} />
+              )}
+            </>
           )}
         </div>
       </Offcanvas>
