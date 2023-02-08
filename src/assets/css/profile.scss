@@ -1,0 +1,80 @@
+.profile {
+  padding: 0 100px;
+  &__box {
+    &__h {
+      text-align: center;
+      padding: 40px 0;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      text-transform: uppercase;
+      margin-bottom: 27px;
+    }
+    &__favs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 54px;
+      &__buttons {
+        border: 1px solid #363636;
+        padding: 20px;
+        width: 240px;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #363636;
+      }
+    }
+    &__navs {
+      margin: 0 auto;
+      width: 221px;
+      &__ul {
+        padding: 0;
+        margin-bottom: 50px;
+        &__li {
+          list-style: none;
+          display: flex;
+          justify-content: space-between;
+
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          text-transform: uppercase;
+          color: #363636;
+          margin-bottom: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+    &__logout {
+      text-align: center;
+      &__p {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: #363636;
+      }
+      &__button {
+        width: 244px;
+        height: 60px;
+        background: #363636;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #fff;
+        border: none;
+        margin-top: 20px;
+      }
+    }
+  }
+}

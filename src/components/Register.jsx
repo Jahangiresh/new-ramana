@@ -34,7 +34,6 @@ const Register = ({ setIsRegister }) => {
         }
       );
       setLoader(false);
-      console.log(data.userId);
       toast.success("Successfully toasted!");
       setUserId(data.userId);
     } catch (error) {

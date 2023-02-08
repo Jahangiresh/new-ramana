@@ -20,7 +20,6 @@ const Signin = ({ setIsRegister }) => {
         }
       );
       setUserInfo(localStorage.setItem("userInfo", JSON.stringify(resp.data)));
-      console.log(resp.data);
       toast.success("logged in");
     } catch (err) {
       toast.error("try again!");

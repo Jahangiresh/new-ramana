@@ -18,6 +18,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Register from "./Register";
 import Signin from "./Login";
 import { RiH1 } from "react-icons/ri";
+import Profile from "./Profile";
 
 function OffCanvasExample({ name, ...props }) {
   const mediaMatch = window.matchMedia("(max-width: 576px)");
@@ -28,7 +29,6 @@ function OffCanvasExample({ name, ...props }) {
   const [isRegister, setIsRegister] = useState(true);
 
   const { userInfo, setUserinfo } = useContext(StoreContext);
-  console.log(userInfo);
   return (
     <>
       <Toaster position="bottom-left" reverseOrder={true} />
@@ -105,7 +105,7 @@ function OffCanvasExample({ name, ...props }) {
             )}
           </div>
           {userInfo ? (
-            <h1>salam</h1>
+            <Profile />
           ) : (
             <>
               {" "}
