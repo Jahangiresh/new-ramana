@@ -21,6 +21,7 @@ const Signin = ({ setIsRegister }) => {
       );
       setUserInfo(localStorage.setItem("userInfo", JSON.stringify(resp.data)));
       toast.success("logged in");
+      window.location.reload(false);
     } catch (err) {
       toast.error("try again!");
     }

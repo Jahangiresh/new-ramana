@@ -6,12 +6,13 @@ import arrow from "../assets/images/Arrow.png";
 import { Link, useNavigate } from "react-router-dom";
 const Profile = () => {
   const navigate = useNavigate();
+
   const logoutHandler = () => {
     try {
       localStorage.removeItem("userInfo");
-      navigate("/");
+      window.location.reload(false);
     } catch (error) {
-        alert('logout later')
+      alert("logout later");
     }
   };
 

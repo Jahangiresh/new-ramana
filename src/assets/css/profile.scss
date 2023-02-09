@@ -1,9 +1,13 @@
 .profile {
   padding: 0 100px;
+
+  @media (max-width: 768px) {
+    padding: 0 30px;
+  }
   &__box {
     &__h {
       text-align: center;
-      padding: 40px 0;
+      // padding: 40px 0;
       font-family: "Inter";
       font-style: normal;
       font-weight: 700;
@@ -15,7 +19,15 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 54px;
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 14px;
+      }
       &__buttons {
+        @media (max-width: 768px) {
+          margin-bottom: 20px;
+        }
         border: 1px solid #363636;
         padding: 20px;
         width: 240px;
@@ -73,7 +85,6 @@
         text-transform: uppercase;
         color: #fff;
         border: none;
-        margin-top: 20px;
       }
     }
   }
