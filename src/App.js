@@ -27,6 +27,9 @@ function App() {
   const [gender, setGender] = useState("");
 
   useEffect(() => {
+    if (localStorage.getItem("userInfo")) {
+      setUserInfo(JSON.parse(localStorage.getItem("userInfo")));
+    }
     if (localStorage.getItem("favorites")) {
       setFavorites(JSON.parse(localStorage.getItem("favorites")));
     } else {
@@ -36,10 +39,6 @@ function App() {
       setCartItems(JSON.parse(localStorage.getItem("cartItems")));
     } else {
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
-    }
-
-    if (localStorage.getItem("userInfo")) {
-      setUserInfo(JSON.parse(localStorage.getItem("userInfo")));
     }
   }, []);
   const favoritesValue = useMemo(

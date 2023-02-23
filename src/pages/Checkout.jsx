@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useEffect } from "react";
-import { redirect } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import { StoreContext } from "../StoreContext";
 
 const Checkout = () => {
@@ -8,6 +8,7 @@ const Checkout = () => {
   const [email, setEmail] = useState(String);
   const [address, setAddress] = useState(String);
   const [number, setNumber] = useState(Number);
+  const { userInfo } = useContext(StoreContext);
 
   const { cartItems, setCartItems } = useContext(StoreContext);
   const removeHandler = (item) => {
@@ -16,6 +17,8 @@ const Checkout = () => {
     setCartItems(cart);
     localStorage.setItem("cartItems", JSON.stringify(cart));
   };
+  
+
   return (
     <div>
       <section className="main">
@@ -77,7 +80,9 @@ const Checkout = () => {
           <div className="main__container__inputs row">
             <div className="main__container__inputs__name col-6">
               <div className="main__container__inputs__name__box">
-                <span className="fullname__label">full name:</span>
+                <span className="fullname__label">
+                  full name:{userInfo.user.name}
+                </span>
 
                 <input
                   name="fullname"
@@ -279,7 +284,7 @@ const Checkout = () => {
             </div>
           </div>
           <div className="main__container__button">
-            <button>authorize payment</button>
+            {/* <button onClick={() => authPaymentHandler()}>authorize payment</button> */}
           </div>
         </div>
       </section>
