@@ -1,0 +1,121 @@
+.orderdetails {
+  margin-top: 300px;
+
+  h1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid #363636;
+    padding-bottom: 20px;
+    color: #363636;
+    margin-bottom: 51px;
+  }
+
+  &__details {
+    background: #dad9d6;
+    padding: 27px 50px 32px;
+    margin-bottom: 20px;
+
+    &__ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+
+      &__li {
+        list-style: none;
+
+        h3 {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          text-transform: uppercase;
+
+          color: #363636;
+          margin: 0;
+        }
+
+        span {
+          font-family: "Inter";
+          font-style: normal;
+          font-size: 14px;
+          text-transform: uppercase;
+
+          color: #363636;
+        }
+      }
+    }
+  }
+
+  &__container {
+    &__inputs {
+      margin: 81px 0;
+      display: flex;
+      justify-content: space-between;
+
+      &__left {
+        border-bottom: 2px solid #363636;
+        padding: 0 0 10px 0;
+
+        label {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 163.52%;
+          text-transform: uppercase;
+
+          color: #363636;
+        }
+
+        input {
+          border: none;
+          outline: none;
+          margin-left: 10px;
+        }
+      }
+
+      &__right {
+        border-bottom: 2px solid #363636;
+        padding: 0 0 10px 0;
+
+        label {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 163.52%;
+          text-transform: uppercase;
+
+          color: #363636;
+        }
+
+        input {
+          border: none;
+          outline: none;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .main__container__orderinfo {
+      margin-bottom: 81px;
+    }
+  }
+}
+
+.img {
+  display: flex;
+
+  img {
+    width: 69px;
+    height: 111px;
+  }
+
+  justify-content: flex-end;
+}

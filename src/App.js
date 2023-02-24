@@ -19,6 +19,9 @@ import { StoreContext } from "./StoreContext";
 import Likes from "./pages/Likes";
 import OffCanvasExample from "./components/Cart";
 import Cart from "./components/Cart";
+import OrderDetails from "./pages/OrderDetails";
+import OrderConfirm from "./pages/OrderConfirm";
+import OrderList from "./pages/OrderList";
 
 function App() {
   const [favorites, setFavorites] = useState([]);
@@ -82,6 +85,10 @@ function App() {
             <Route path="/*" element={<NothingPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/likes" element={<Likes />} />
+            <Route path="/orderdetails/:id" element={<OrderDetails />} />
+
+            <Route path="/orderlist" element={<OrderList />} />
+            <Route path="/orderconfirm" element={<OrderConfirm />} />
 
             <Route path="/singleproduct/:id" element={<SingleProduct />} />
           </Routes>
