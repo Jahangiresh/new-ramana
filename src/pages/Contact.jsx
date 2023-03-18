@@ -3,8 +3,47 @@ import contactImg from "../assets/images/cntct.png";
 import "../assets/css/checkout.scss";
 import "../assets/css/contact.scss";
 import { useNavigate } from "react-router-dom";
+import { useReducer } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import { toast } from "react-hot-toast";
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "FETCH_REQUEST":
+      return { ...state, loading: true };
+    case "FETCH_SUCCESS":
+      return { ...state, loading: false, contactInfo: action.payload };
+    case "FETCH_FAIL":
+      return { ...state, loading: false, error: true };
+    default:
+      return state;
+  }
+};
+
 const Contact = () => {
-  const navigate=useNavigate()
+  const [{ contactInfo, error, loading }, dispatch] = useReducer(reducer, {
+    contactInfo: [],
+    loading: true,
+    error: false,
+  });
+
+  useEffect(() => {
+    const getContactInfo = async () => {
+      dispatch({ type: "FETCH_REQUEST" });
+      try {
+        const resp = await axios.get("https://irp.ramanacastle.com/api/elaqe");
+        console.log(resp.data.data);
+        dispatch({ type: "FETCH_SUCCESS", payload: resp.data.data });
+      } catch (err) {
+        toast.error("error");
+        dispatch({ type: "FETCH_FAIL" });
+      }
+    };
+    getContactInfo();
+  }, []);
+
+  const navigate = useNavigate();
   return (
     <div className="contact">
       <div className="contact__cover  ">
@@ -21,15 +60,26 @@ const Contact = () => {
           <div className="contact__content__row__info col-4">
             <h4>our contacts</h4>
             <span>
-              Ünvan <br /> Aşıq Molla Cümə 44, Bakı, Azerbaycan <br />
-              <br /> Bizimlə əlaqə <br /> Nömrə : +99412 310 52 04 / 05 <br />
-              Telefon: +99455 310 52 04 / 05 <br />
+              Ünvan <br /> {contactInfo.address} <br />
+              <br /> Bizimlə əlaqə <br /> Nömrə : {contactInfo.phone_1} <br />
+              Telefon: {contactInfo.phone_2}
+              <br />
               <br /> E-Poçt adresi <br />
-              info@ramana.az <br />
-              <br /> İş vaxtları <br /> Həftəiçi : 09:00 - 18:00 Həftəsonu :
-              10:00 - 21:00 Sosial mediayada biz:
-            </span> <br />
-            <button onClick={()=>navigate('/branches')} className="our__branches">our branches</button>
+              {contactInfo.email} <br />
+              <br /> İş vaxtları <br /> Həftəiçi :{contactInfo.weekdays}{" "}
+              Həftəsonu :{contactInfo.weekend}Sosial mediayada biz:
+              {contactInfo.instagram}
+              {contactInfo.facebook}
+              {contactInfo.tiktok}
+              {contactInfo.linkedin}
+            </span>{" "}
+            <br />
+            <button
+              onClick={() => navigate("/branches")}
+              className="our__branches"
+            >
+              our branches
+            </button>
           </div>
 
           <div className="contact__content__row__inputs col-8">

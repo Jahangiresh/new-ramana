@@ -32,21 +32,23 @@ const SingleProduct = () => {
     error: false,
   });
   const params = useParams();
-  const _id = params.id;
+  const _slug = params.slug;
 
   useEffect(() => {
     const getProduct = async () => {
       dispatch({ type: "FETCH_REQ" });
       try {
-        const resp = await axios.get(`http://localhost:3000/products/${_id}`);
-        dispatch({ type: "FETCH_SUCCESS", payload: resp.data });
+        const resp = await axios.get(
+          `https://irp.ramanacastle.com/api/mehsullar/${_slug}`
+        );
+        dispatch({ type: "FETCH_SUCCESS", payload: resp.data.data });
       } catch (error) {
         dispatch({ type: "FETCH_FAIL" });
         alert("error");
       }
     };
     getProduct();
-  }, [_id]);
+  }, [_slug]);
 
   const settings = {
     dots: true,

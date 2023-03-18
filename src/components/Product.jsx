@@ -15,7 +15,6 @@ import { BsBag, BsHeart, BsHeartFill, BsBagFill } from "react-icons/bs";
 import { StoreContext } from "../StoreContext";
 
 const reducer = (state, action) => {
-
   switch (action.type) {
     case "FETCH_REQUEST":
       return { ...state, loading: true };
@@ -26,7 +25,6 @@ const reducer = (state, action) => {
     default:
       return state;
   }
-  
 };
 
 const MenProduct = () => {
@@ -59,10 +57,10 @@ const MenProduct = () => {
         setGender(productGender);
 
         const resp = await axios.get(
-          `http://localhost:3000/products?gender=${productGender}`
+          `https://irp.ramanacastle.com/api/mehsullar?gender=${productGender}`
         );
 
-        dispatch({ type: "FETCH_SUCCESS", payload: resp.data });
+        dispatch({ type: "FETCH_SUCCESS", payload: resp.data.data });
       } catch (error) {}
 
       dispatch({ type: "FETCH_FAIL" });
@@ -154,10 +152,16 @@ const MenProduct = () => {
                 </span>
               </div>
               <div
-                onClick={() => navigate(`/singleproduct/${product.id}`)}
+                onClick={() => navigate(`/singleproduct/${product.slug}`)}
                 className="product__box__image"
               >
-                <Slider {...settings}>
+                <img
+                  className="produc__img"
+                  key={product.id}
+                  src={product.image}
+                  alt="prod.jpeg"
+                />
+                {/* <Slider {...settings}>
                   {product.images &&
                     product.images.map((img) => (
                       <img
@@ -167,7 +171,7 @@ const MenProduct = () => {
                         alt=""
                       />
                     ))}
-                </Slider>
+                </Slider> */}
               </div>
               <div
                 onClick={() => navigate(`/singleproduct/${product.id}`)}

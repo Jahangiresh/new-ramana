@@ -11,9 +11,10 @@ const Categories = () => {
   useEffect(() => {
     const getCategories = async () => {
       const categoriesResp = await axios.get(
-        "http://localhost:3000/categories"
+        "https://irp.ramanacastle.com/api/categroy"
       );
-      setCategories(categoriesResp.data);
+      console.log(categoriesResp.data.data);
+      setCategories(categoriesResp.data.data);
     };
     getCategories();
   }, []);
@@ -23,7 +24,7 @@ const Categories = () => {
       {categories &&
         categories.map((category) => (
           <li key={category} className="filter__categories__hover__ul__li">
-            <Checkbox {...label} /> {category}
+            <Checkbox {...label} /> {category.slug}
           </li>
         ))}
     </ul>

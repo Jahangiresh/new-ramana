@@ -9,11 +9,12 @@ const Signin = ({ setIsRegister }) => {
   const { userInfo, setUserInfo } = useContext(StoreContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
   const loginHandler = async (e) => {
     e.preventDefault();
     try {
       const resp = await axios.post(
-        "https://newramana.azurewebsites.net/api/account/login",
+        "https://irp.ramanacastle.com/api/login-admin",
         {
           email,
           password,
